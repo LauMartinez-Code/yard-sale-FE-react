@@ -7,27 +7,31 @@
     width: 300px;
 }
 
-.form-vertical--label {
+.form-vertical__label {
     display: block;
     font-weight: 700;
 }
 
-.form-vertical--input {
+.form-vertical__input {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
     border: .8px solid transparent;
     background: var(--text-input-field);
     margin-top: 4px;
 }
 
-.form-vertical--input:focus {
+.form-vertical__input:focus {
     color: var(--dark);
     border-color: var(--hospital-green-dark);
     outline: 0;
     box-shadow: 0 0 0 0.2rem var(--hospital-green);
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-vertical__label:last-of-type + button[type="submit"] {
+    margin-top: 10px;
 }
 
 @media (min-width: 768px) {
