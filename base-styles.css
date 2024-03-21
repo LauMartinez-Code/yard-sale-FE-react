@@ -1,0 +1,70 @@
+:root{
+    font-size: 10px;
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #232830;
+    --very-light-pink: #A9A9A9;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --hospital-green-dark: #92D29B;
+    --main-font: Quicksand, 'Segoe UI', Verdana, sans-serif;
+    --font-sm: 1.4rem;
+    --font-md: 1.6rem;
+    --font-lg: 1.8rem;
+    --font-xl: 2.2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+    font-size: var(--font-sm);
+}
+
+.main-logo {
+    display: block;
+    margin: 0 auto 30px;
+    width: 170px;
+}
+
+.title-h1 {
+    font-weight: 700;
+    font-size: var(--font-lg);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: var(--font-md);
+    color: var(--very-light-pink);
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .main-logo {
+        display: none;
+    }
+    
+    .container {
+        font-size: var(--font-md);
+    }
+    
+    .title-h1 {
+        font-size: var(--font-xl);
+    }
+    
+    .subtitle {
+        font-size: var(--font-lg);
+    }
+}
