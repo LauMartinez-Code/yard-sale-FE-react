@@ -1,10 +1,11 @@
 .btn {
     display: inline-block;
     text-align: center;
+    text-decoration: none;
     font-size: var(--font-sm);
     font-weight: 700;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 16px;
+    border-radius: 10px;
     border: 1px solid transparent;
     cursor: pointer;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -20,6 +21,22 @@
 }
 
 .btn--primary:active {
+    border-color: var(--white);
+    box-shadow: 0 0 0 0.2rem var(--hospital-green);
+}
+
+.btn--outline-primary {
+    color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
+    background: var(--white);
+}
+
+.btn--outline-primary:hover {
+    color: var(--hospital-green-dark);
+    background: var(--text-input-field);
+}
+
+.btn--outline-primary:active {
     border-color: var(--hospital-green-dark);
     box-shadow: 0 0 0 0.2rem var(--hospital-green);
 }

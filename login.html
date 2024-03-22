@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="./base-styles.css">
+    <link rel="stylesheet" href="./components/form-vertical.css">
+    <link rel="stylesheet" href="./components/btn.css">
+    <link rel="stylesheet" href="./components/spacing.css">
+    <link rel="shortcut icon" href="./logos/favicon_yard_sale.svg" type="image/x-icon">
+    <title>Yard Sale - Login</title>
+</head>
+<body>
+    <main class="container">
+        <img class="main-logo main-logo--lg" src="./logos/logo_yard_sale.svg" alt="Site's Logo">
+
+        <form class="form-vertical">
+            <label class="form-vertical__label">
+                Email address
+                <input type="email" class="form-vertical__input" placeholder="example@example.com">
+            </label>
+
+            <label class="form-vertical__label">
+                Password
+                <input type="password" class="form-vertical__input" placeholder="Enter password">
+            </label>
+
+            <button type="submit" class="btn btn--primary">
+                Log in
+            </button>
+
+            <a class="form-vertical__link" href="./password-recovery.html">Forgot my password</a>
+
+            <a class="btn btn--outline-primary fixed-bottom--md mb-3" href="./create-account.html">
+                Sign up
+            </a>
+        </form>
+    </main>
+</body>
+</html>
