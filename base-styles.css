@@ -45,14 +45,14 @@
 .title-h1 {
     font-weight: 700;
     font-size: var(--font-lg);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
     font-weight: 500;
     font-size: var(--font-md);
     color: var(--very-light-pink);
-    margin-bottom: 15px;
+    margin-bottom: 24px;
 }
 
 @media (min-width: 768px) {
