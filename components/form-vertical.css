@@ -34,18 +34,6 @@
     margin-top: 10px;
 }
 
-.form-vertical__link {
-    align-self: center;
-    text-decoration: none;
-    color: var(--hospital-green);
-    margin: 10px auto 20px;
-}
-
-.form-vertical__link:hover {
-    text-decoration: underline;
-    color: var(--hospital-green-dark);
-}
-
 @media (min-width: 768px) {
     .form-vertical {
         width: 330px;
