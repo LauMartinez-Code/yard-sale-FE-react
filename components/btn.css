@@ -41,6 +41,50 @@
     box-shadow: 0 0 0 0.2rem var(--hospital-green);
 }
 
+.btn--link-primary {
+    font-weight: inherit;
+    color: var(--hospital-green);
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.btn--link-primary:hover {
+    color: var(--hospital-green-dark);
+    text-decoration: underline;
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
+}
+
+.btn-close {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.btn-close::after {
+    content: "×";
+}
+
+.btn-close:hover, .btn-close:focus {
+    color: rgba(157, 5, 5, 0.8);
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
 @media (min-width: 768px) {
-    
+    .btn-group {
+        flex-direction: row;
+    }
 }
