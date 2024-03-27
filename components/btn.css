@@ -1,9 +1,8 @@
 .btn {
     display: inline-block;
-    width: inherit;
     text-align: center;
     text-decoration: none;
-    font-size: var(--font-sm);
+    font-size: inherit;
     font-weight: 700;
     padding: 16px;
     border-radius: 10px;
@@ -43,7 +42,5 @@
 }
 
 @media (min-width: 768px) {
-    .btn {
-        font-size: var(--font-md);
-    }
+    
 }
