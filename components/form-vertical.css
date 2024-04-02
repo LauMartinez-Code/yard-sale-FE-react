@@ -34,3 +34,9 @@
 .form-vertical__label:last-of-type + button[type="submit"] {
     margin-top: 10px;
 }
+
+.form-vertical__text-small {
+    font-weight: 500;
+    font-size: var(--font-smaller);
+    color: var(--very-light-pink);
+}
