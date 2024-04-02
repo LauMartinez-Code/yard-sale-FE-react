@@ -13,7 +13,11 @@
     backdrop-filter: blur(2px);
 }
 
-.modal__body, .modal__header, .modal__footer {
+.modal__header, .modal__footer {
+    padding: 0 1rem;
+}
+
+.modal__body {
     padding: 1rem;
 }
 
