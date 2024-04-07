@@ -96,7 +96,7 @@ small {
 
 /* Media Queries */
 @media (min-width: 350px) {
-    .container--sm {
+    .container-sm {
         max-width: var(--container-width-xs);
     }
 }
