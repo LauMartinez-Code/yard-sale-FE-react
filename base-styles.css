@@ -14,6 +14,7 @@
     --font-lg: 1.8rem;
     --font-xl: 2.2rem;
     --container-width-xs: 350px;
+    --container-margin: 20px;
 }
 
 * {
@@ -27,6 +28,11 @@ body {
     font-size: var(--font-sm);
 }
 
+.container {
+    margin: var(--container-margin);
+    font-size: inherit;
+}
+
 .container-flex-center {
     display: flex;
     flex-direction: column;
@@ -37,6 +43,10 @@ body {
     margin: auto;
     text-align: center;
     font-size: inherit;
+}
+
+.d-none {
+    display: none !important
 }
 
 .main-logo {
@@ -101,6 +111,21 @@ small {
     }
 }
 
+@media (min-height: 500px) {
+    .fixed-bottom {
+        position: fixed;
+        bottom: 0;
+        width: calc(100% - var(--container-margin)*2);
+    }
+    
+    .fixed-bottom-flex {
+        position: fixed;
+        bottom: 0;
+        width: inherit;
+        max-width: inherit;
+    }
+}
+
 @media (max-height: 500px) {
     .container-flex-center {
         height: inherit;
@@ -108,7 +133,29 @@ small {
     }
 }
 
+@media (max-width: 767.98px) and (orientation: landscape) {
+    .main-logo {
+        display: none;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
+    @media (min-height: 500px) {
+        .fixed-bottom-flex--md {
+            position: fixed;
+            bottom: 0;
+            width: inherit;
+            max-width: inherit;
+        }
+    }
+    
+    .fixed-bottom-reset--md {
+        position: static;
+        width: initial;
+    }
+
     .main-logo {
         display: none;
     }
@@ -132,19 +179,20 @@ small {
     .order-1--md {
         order: 1;
     }
-}
 
-@media (max-width: 767.98px) and (orientation: landscape) {
-    .main-logo {
-        display: none;
+    .container-sm--md {
+        max-width: var(--container-width-xs);
     }
-}
 
-@media (max-width: 991.98px) and (min-height: 500px) {
-    .fixed-bottom--md {
-        position: fixed;
-        bottom: 0;
-        width: inherit;
-        max-width: inherit;
+    .container-flex-center--md {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 90vw;
+        margin: auto;
+        text-align: center;
+        font-size: inherit;
     }
 }

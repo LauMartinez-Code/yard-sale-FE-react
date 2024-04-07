@@ -8,6 +8,10 @@
     max-width: inherit;
 }
 
+.form-vertical[readonly] {
+    gap: 20px;
+}
+
 .form-vertical__label {
     display: block;
     font-weight: 700;
@@ -16,11 +20,24 @@
 .form-vertical__input {
     display: block;
     width: 100%;
+    field-sizing: content;
+    margin-top: 4px;
     padding: 12px;
+    resize: none;
     border-radius: 5px;
     border: .8px solid transparent;
     background: var(--text-input-field);
-    margin-top: 4px;
+}
+
+.form-vertical__input:read-only {
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.form-vertical__input:read-only:focus {
+    border: none;
+    box-shadow: none;
 }
 
 .form-vertical__input:focus {

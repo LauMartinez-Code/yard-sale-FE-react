@@ -22,25 +22,25 @@
         <form class="form-vertical">
             <label class="form-vertical__label">
                 Name
-                <input type="text" id="name" class="form-vertical__input" placeholder="Enter name" required>
+                <textarea type="text" id="name" class="form-vertical__input" placeholder="Enter name" maxlength="80" required></textarea>
             </label>
 
             <label class="form-vertical__label">
                 Email address
-                <input type="email" id="email" class="form-vertical__input" placeholder="example@example.com" required>
+                <input type="email" id="email" class="form-vertical__input" placeholder="example@example.com" maxlength="80" required>
             </label>
 
             <label class="form-vertical__label">
                 Password 
                 <input type="password" class="form-vertical__input" placeholder="Enter password" 
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="80" required>
                 
                 <small class="form-vertical__text-small">
                     It must contain 8 or more characters, in which there is at least one number and one upper and lower case letter
                 </small>
             </label>
 
-            <button type="submit" class="btn btn--primary fixed-bottom--md mb-3">
+            <button type="submit" class="btn btn--primary fixed-bottom-flex fixed-bottom-reset--md mb-3">
                 Create account
             </button>
         </form>
