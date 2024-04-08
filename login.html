@@ -9,29 +9,34 @@
     <link rel="stylesheet" href="./base-styles.css">
     <link rel="stylesheet" href="./components/form-vertical.css">
     <link rel="stylesheet" href="./components/btn.css">
+    <link rel="stylesheet" href="./components/spacing.css">
     <link rel="shortcut icon" href="./logos/favicon_yard_sale.svg" type="image/x-icon">
-    <title>Yard Sale</title>
+    <title>Yard Sale - Login</title>
 </head>
 <body>
     <main class="container-flex-center container-sm">
-        <img class="main-logo" src="./logos/logo_yard_sale.svg" alt="Site's Logo">
-        <h1 class="title-h1">Create a new password</h1>
-        <h4 class="subtitle">Enter a new password for your account</h4>
+        <img class="main-logo main-logo--lg" src="./logos/logo_yard_sale.svg" alt="Site's Logo">
 
         <form class="form-vertical">
+            <label class="form-vertical__label">
+                Email address
+                <input type="email" class="form-vertical__input" placeholder="example@example.com" maxlength="80" required>
+            </label>
+
             <label class="form-vertical__label">
                 Password
                 <input type="password" class="form-vertical__input" placeholder="Enter password" maxlength="80" required>
             </label>
 
-            <label class="form-vertical__label">
-                Re-enter password
-                <input type="password" class="form-vertical__input" placeholder="Re-enter password" maxlength="80" required>
-            </label>
-
             <button type="submit" class="btn btn--primary">
-                Confirm
+                Log in
             </button>
+
+            <a class="link mt-2 mb-5 mx-auto" href="./password-recovery.html">Forgot my password</a>
+
+            <a class="btn btn--outline-primary fixed-bottom-flex fixed-bottom-reset--md mb-3" href="./create-account.html">
+                Sign up
+            </a>
         </form>
     </main>
 </body>

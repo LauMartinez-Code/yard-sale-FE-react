@@ -1,10 +1,11 @@
 .btn {
     display: inline-block;
     text-align: center;
-    font-size: var(--font-sm);
+    text-decoration: none;
+    font-size: inherit;
     font-weight: 700;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 16px;
+    border-radius: 10px;
     border: 1px solid transparent;
     cursor: pointer;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -20,12 +21,70 @@
 }
 
 .btn--primary:active {
+    border-color: var(--white);
+    box-shadow: 0 0 0 0.2rem var(--hospital-green);
+}
+
+.btn--outline-primary {
+    color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
+    background: var(--white);
+}
+
+.btn--outline-primary:hover {
+    color: var(--hospital-green-dark);
+    background: var(--text-input-field);
+}
+
+.btn--outline-primary:active {
     border-color: var(--hospital-green-dark);
     box-shadow: 0 0 0 0.2rem var(--hospital-green);
 }
 
+.btn--link-primary {
+    font-weight: inherit;
+    color: var(--hospital-green);
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.btn--link-primary:hover {
+    color: var(--hospital-green-dark);
+    text-decoration: underline;
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
+}
+
+.btn-close {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.btn-close::after {
+    content: "×";
+}
+
+.btn-close:hover, .btn-close:focus {
+    color: rgba(157, 5, 5, 0.8);
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
 @media (min-width: 768px) {
-    .btn {
-        font-size: var(--font-md);
+    .btn-group {
+        flex-direction: row;
     }
 }
