@@ -6,6 +6,7 @@
     --text-input-field: #F7F7F7;
     --hospital-green: #ACD9B2;
     --hospital-green-dark: #92D29B;
+    --grey-box-shadow: 0 0 15px rgb(139, 139, 139);
     --main-font: Quicksand, 'Segoe UI', Verdana, sans-serif;
     font-size: 10px;
     --font-smaller: 1.25rem;

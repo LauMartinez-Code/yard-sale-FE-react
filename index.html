@@ -8,11 +8,68 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="./base-styles.css">
     <link rel="stylesheet" href="./components/btn.css">
+    <link rel="stylesheet" href="./components/nav-bar.css">
     <link rel="stylesheet" href="./components/products.css">
     <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
     <title>Yard Sale</title>
 </head>
 <body>
+    <nav class="nav-bar">
+        <button type="button" class="nav-bar__menu btn" onclick="">
+            <img src="./assets/icons/icon_menu.svg" alt="menu">
+        </button>
+        
+        <div class="nav-bar__section-logo-categories">
+            <a class="nav-bar__link" href="/index.html">
+                <img class="nav-bar__logo" src="./assets/logos/logo_yard_sale.svg" alt="Yard Sale">
+            </a>
+            
+            <form class="nav-bar__categories">
+                <label class="nav-bar__category-label">
+                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-all" checked>
+                    <span>All</span>
+                </label>
+
+                <label class="nav-bar__category-label">
+                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-clothes">
+                    <span>Clothes</span>
+                </label>
+                
+                <label class="nav-bar__category-label">
+                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-electro">
+                    <span>Electronics</span>
+                </label>
+
+                <label class="nav-bar__category-label">
+                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-furniture">
+                    <span>Furniture</span>
+                </label>
+                
+                <label class="nav-bar__category-label">
+                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-toys">
+                    <span>Toys</span>
+                </label>
+
+                <label class="nav-bar__category-label">
+                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-others">
+                    <span>Others</span>
+                </label>
+            </form>
+        </div>
+
+        <div class="nav-bar__section-email-cart">
+            <p class="nav-bar__email">example@email.com</p>
+            <button type="button" class="nav-bar__email-btn btn">
+                <img src="./assets/icons/arrow.svg" alt=">">
+            </button>
+
+            <button type="button" class="nav-bar__cart-btn btn">
+                <img class="nav-bar__cart-icon" src="./assets/icons/icon_shopping_cart.svg" alt="Cart 🛒">
+            </button>
+        </div>
+
+    </nav>
+
     <div class="container">
         <main class="products-grid"></main>
 

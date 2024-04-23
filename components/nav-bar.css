@@ -1,0 +1,88 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--grey-box-shadow);
+}
+
+.nav-bar__logo {
+    width: 140px;
+}
+
+.nav-bar__categories {
+    display: none;
+    align-self: center;
+}
+
+.nav-bar__category-option {
+    appearance: none;
+}
+
+.nav-bar__category-option:checked + span {
+    color: var(--hospital-green);
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1.5px solid var(--hospital-green);
+    font-weight: bold;
+    transition: color .3s ease-in-out;
+}
+
+.nav-bar__category-label {
+    margin-right: 15px;
+    color: var(--very-light-pink);
+    cursor: pointer;
+}
+
+.nav-bar__email, .nav-bar__email-btn {
+    display: none;
+}
+
+.nav-bar__email {
+    color: var(--black);
+    font-weight: 300;
+    font-size: var(--font-sm);
+    cursor: default;
+}
+
+.nav-bar__email-btn {
+    padding: 5px !important;
+}
+
+.nav-bar__email-btn img {
+    transform: rotate(90deg);
+    width: 5px;
+}
+
+@media (min-width: 992px) {
+
+    .nav-bar__menu {
+        display: none !important
+    }
+
+    .nav-bar__section-logo-categories, .nav-bar__section-email-cart {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-bar__categories, .nav-bar__email, .nav-bar__email-btn {
+        display: initial;
+    }
+
+    .nav-bar__link {
+        display: inline-block;
+        margin: 0 30px;
+        text-decoration: none;
+    }
+
+    .nav-bar__logo {
+        width: 150px;
+    }
+
+    .nav-bar__cart-btn {
+        margin: 0 20px 0 5px;
+    }
+
+    .nav-bar__cart-icon {
+        width: 28px;
+    }
+}
