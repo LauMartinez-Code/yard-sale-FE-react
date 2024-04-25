@@ -29,6 +29,10 @@ body {
     font-size: var(--font-sm);
 }
 
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
 .container {
     margin: var(--container-margin);
     font-size: inherit;
@@ -91,6 +95,16 @@ small {
     color: var(--hospital-green-dark);
 }
 
+.link-unstyled {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.link-unstyled:active, .link-unstyled:hover {
+    text-decoration: underline;
+    color: var(--dark);
+}
+
 .circle-wrapper {
     display: flex;
     justify-content: center;
@@ -104,6 +118,9 @@ small {
 /* Animations */
 .scale-up-center { animation:scale-up-center 0.4s; }
 @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
+
+.slide-right{ animation:slide-right .3s linear both; }
+@keyframes slide-right{ 0%{transform:translateX(-100px)} 100%{transform:translateX(0px)} }
 
 /* Media Queries */
 @media (min-width: 350px) {

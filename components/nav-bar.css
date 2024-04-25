@@ -18,6 +18,7 @@
 
 .nav-bar__category-option {
     appearance: none;
+    display: inline-block;
 }
 
 .nav-bar__category-option:checked + span {
@@ -30,7 +31,7 @@
 }
 
 .nav-bar__category-label {
-    margin-right: 15px;
+    font-weight: 500;
     color: var(--very-light-pink);
     cursor: pointer;
 }
@@ -39,7 +40,7 @@
     display: none;
 }
 
-.nav-bar__email {
+.nav-bar__email, .nav-bar__menu-email {
     color: var(--black);
     font-weight: 300;
     font-size: var(--font-sm);
@@ -55,9 +56,64 @@
     width: 5px;
 }
 
+.nav-bar__menu {
+    max-width: none;
+    max-height: none;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.nav-bar__menu::backdrop {
+    backdrop-filter: blur(2px);
+}
+
+.nav-bar__menu .btn-close {
+    align-self: flex-end;
+}
+
+.nav-bar__menu-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: var(--font-md);
+    font-weight: bold;
+}
+
+.nav-bar__menu-title {
+    font-size: var(--font-lg);
+    margin-top: -20px;
+}
+
+.nav-bar__menu-divider {
+    margin: 10px 0;
+}
+
+.nav-bar__sign-out-btn {
+    align-self: flex-start;
+    font-size: var(--font-sm);
+    margin-top: 5px;
+}
+
+@media (min-height: 475px) {
+    .nav-bar__menu-section-email {
+        position: absolute;
+        bottom: 25px;
+    }
+}
+
+@media (min-width: 778px) {
+    .nav-bar__menu {
+        width: 40vw;
+    }
+}
+
 @media (min-width: 992px) {
 
-    .nav-bar__menu {
+    .nav-bar__menu-btn, .nav-bar__menu {
         display: none !important
     }
 
@@ -69,11 +125,16 @@
     .nav-bar__categories, .nav-bar__email, .nav-bar__email-btn {
         display: initial;
     }
-
+    
     .nav-bar__link {
         display: inline-block;
         margin: 0 30px;
         text-decoration: none;
+    }
+    
+    .nav-bar__category-label {
+        display: inline-block;
+        margin-right: 15px;
     }
 
     .nav-bar__logo {
