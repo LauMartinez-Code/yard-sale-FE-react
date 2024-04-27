@@ -157,6 +157,17 @@ small {
     }
 }
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .d-initial--sm {
+        display: initial !important
+    }
+
+    .d-none--sm {
+        display: none !important
+    }
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
@@ -212,5 +223,24 @@ small {
         margin: auto;
         text-align: center;
         font-size: inherit;
+    }
+
+    .d-initial--md {
+        display: initial !important
+    }
+
+    .d-none--md {
+        display: none !important
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .d-initial--lg {
+        display: initial !important
+    }
+    
+    .d-none--lg {
+        display: none !important
     }
 }

@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./base-styles.css">
     <link rel="stylesheet" href="./components/btn.css">
     <link rel="stylesheet" href="./components/nav-bar.css">
+    <link rel="stylesheet" href="./components/dropdown.css">
     <link rel="stylesheet" href="./components/products.css">
+    <link rel="stylesheet" href="./components/spacing.css">
     <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
     <title>Yard Sale</title>
 </head>
@@ -58,10 +60,22 @@
         </div>
 
         <div class="nav-bar__section-email-cart">
-            <p class="nav-bar__email">example@email.com</p>
-            <button type="button" class="nav-bar__email-btn btn">
-                <img src="./assets/icons/arrow.svg" alt=">">
-            </button>
+            <div class="dropdown d-none d-initial--lg">
+                <span class="dropdown__title nav-bar__email">example@email.com</span>
+                <button type="button" class="dropdown__btn btn">
+                    <img class="dropdown__btn-icon dropdown__btn-icon--sm" src="./assets/icons/arrow.svg" alt=">">
+                </button>
+                <menu class="dropdown__content dropdown__content--slide-bottom">
+                    <a href="#" class="dropdown__option link-unstyled">My orders</a>
+                    <a href="./my-account.html" class="dropdown__option link-unstyled">My account</a>
+                    
+                    <hr class="my-3">
+
+                    <button type="button" class="dropdown__option btn btn--link-primary">
+                        Sign out
+                    </button>
+                </menu>
+            </div>
             
             <button type="button" class="nav-bar__cart-btn btn">
                 <img class="nav-bar__cart-icon" src="./assets/icons/icon_shopping_cart.svg" alt="Cart 🛒">
@@ -103,9 +117,9 @@
                     <span>Others</span>
                 </label>
                 
-                <hr class="nav-bar__menu-divider">
+                <hr class="my-3">
                 
-                <a href="#" class="link-unstyled">My orders</a>
+                <a href="#" class="link-unstyled mb-2">My orders</a>
                 <a href="./my-account.html" class="link-unstyled">My account</a>
                 
                 <section class="nav-bar__menu-section-email">
