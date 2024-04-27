@@ -14,7 +14,7 @@
 
 .form-vertical__label {
     display: block;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .form-vertical__input {
@@ -53,7 +53,7 @@
 }
 
 .form-vertical__text-small {
-    font-weight: 500;
+    font-weight: var(--font-weight-regular);
     font-size: var(--font-smaller);
     color: var(--very-light-pink);
 }

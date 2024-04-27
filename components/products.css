@@ -31,14 +31,14 @@
 .product-card__title {
     margin-bottom: 5px;
     font-size: var(--font-md);
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     color: var(--dark);
     overflow: hidden;
 }
 
 .product-card__price {
     font-size: var(--font-lg);
-    font-weight: 700;
+    font-weight: bold;
     color: var(--black);
 }
 
