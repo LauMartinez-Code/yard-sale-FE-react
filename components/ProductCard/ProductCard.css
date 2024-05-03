@@ -54,9 +54,18 @@
 
 .product-card__cart-button-icon {
     width: 45px;
+    border-radius: 50%;
+    transition: box-shadow .3s ease-in-out;
 }
 
-.product-card[in-cart] .product-card__cart-button-icon {
-    border-radius: 100%;
+.product-card__cart-button-icon:hover {
+    box-shadow: 0 0 10px var(--hospital-green-dark);
+}
+
+.product-in-cart .product-card__cart-button-icon {
     box-shadow: var(--grey-box-shadow);
+}
+
+.product-in-cart .product-card__cart-button-icon:hover {
+    box-shadow: 0 0 10px rgb(213, 51, 51);
 }

@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="./components/btn.css">
     <link rel="stylesheet" href="./components/nav-bar.css">
     <link rel="stylesheet" href="./components/dropdown.css">
-    <link rel="stylesheet" href="./components/products.css">
+    <link rel="stylesheet" href="./components/ProductCard/ProductCard.css">
     <link rel="stylesheet" href="./components/spacing.css">
     <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
+    <script type="module" src="./components/ProductCard/ProductCard.js"></script>
     <title>Yard Sale</title>
 </head>
 <body>
@@ -133,27 +134,12 @@
     
     <div class="container">
         <main class="products-grid"></main>
-
-        <template id="product-card">
-            <article class="product-card">
-                <figure>
-                    <img class="product-card__image" src="" alt="product cover">
-                </figure>
-                <div class="product-card__info">
-                    <div>
-                        <p class="product-card__title"></p>
-                        <p class="product-card__price"></p>
-                    </div>
-                    
-                    <button type="button" class="btn product-card__cart-button" title="">
-                        <img class="product-card__cart-button-icon" src="" alt="cart icon">
-                    </button>
-                </div>
-            </article>
-        </template>
     </div>
 
-    <script>
+    <script type="module">
+        import ProductCard from './components/ProductCard/ProductCard.js';
+        import PRODUCT_LIST from './assets/data/ProductList.js';
+        
         //#region Nav-bar
         const navbarMenu = document.querySelector('.nav-bar__menu');
         
@@ -170,80 +156,11 @@
         window.matchMedia('(min-width: 992px)').addEventListener("change", handleWidthNavbarMenuChange);
         //#endregion Nav-bar
 
-        const productList = [
-            {
-                title: 'Audio cassette',
-                price: 50,
-                coverSrc: './assets/product-covers/audio-cassette.jpg',
-                inCart: false,
-            },
-            {
-                title: 'Brownsville NY electric guitar - Black and white original',
-                price: 700,
-                coverSrc: './assets/product-covers/electric-guitar.jpg',
-                inCart: true,
-            },
-            {
-                title: 'Pentax camera - Black and grey',
-                price: 900,
-                coverSrc: './assets/product-covers/camera.jpg',
-                inCart: false,
-            },
-            {
-                title: 'Wireless PC mouse Logitech',
-                price: 350,
-                coverSrc: './assets/product-covers/pc-mouse.jpg',
-                inCart: false,
-            },
-            {
-                title: 'Rolex wrist watch',
-                price: 1200,
-                coverSrc: './assets/product-covers/wrist-watch.jpg',
-                inCart: true,
-            },
-            {
-                title: 'Brown wooden chair',
-                price: 100,
-                coverSrc: './assets/product-covers/chair.jpg',
-                inCart: false,
-            },
-        ];
-        const productCards = [];
         const main = document.querySelector('main.products-grid');
         
-        const setEllipsis = (element, text) => {
-            if(text.length > 45) {
-                element.setAttribute('title', text);
-                element.innerText = text.substring(0,41) + '...';
-            }
-            else {
-                element.innerText = text;
-            }
-        };
-
-        const fetchProducts = () => {
-            for (const product of productList) {
-                const card = document.getElementById('product-card').content.cloneNode(true);
-                
-                setEllipsis(card.querySelector('.product-card__title'), product.title);
-                card.querySelector('.product-card__price').innerText = '$' + product.price;
-                card.querySelector('.product-card__image').setAttribute('src', product.coverSrc);
-                card.querySelector('.product-card__cart-button').setAttribute('title',
-                    product.inCart ? 'Added to cart' : 'Add to cart');
-                card.querySelector('.product-card__cart-button-icon').setAttribute('src',
-                    product.inCart ? './assets/icons/bt_added_to_cart.svg' : './assets/icons/bt_add_to_cart.svg');
-                
-                product.inCart && card.querySelector('.product-card').setAttribute('in-cart', true);
-
-                productCards.push(card);
-            }
-    
-            for (const card of productCards) {
-                main.appendChild(card);
-            }
-        };
-
-        fetchProducts();
+        for (const product of PRODUCT_LIST) {
+            main.appendChild(new ProductCard(product));
+        }
     </script>
 </body>
 </html>
