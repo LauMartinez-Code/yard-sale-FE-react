@@ -1,3 +1,5 @@
+@import url("./components/spacing.css");
+
 :root{
     --white: #FFFFFF;
     --black: #000000;
