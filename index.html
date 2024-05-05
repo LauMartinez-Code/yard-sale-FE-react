@@ -8,129 +8,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="./base-styles.css">
     <link rel="stylesheet" href="./components/btn.css">
-    <link rel="stylesheet" href="./components/nav-bar.css">
-    <link rel="stylesheet" href="./components/dropdown.css">
+    <link rel="stylesheet" href="./components/NavBar/NavBar.css">
     <link rel="stylesheet" href="./components/ProductCard/ProductCard.css">
     <link rel="stylesheet" href="./components/spacing.css">
     <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
     <script type="module" src="./components/ProductCard/ProductCard.js"></script>
+    <script type="module" src="./components/NavBar/NavBar.js"></script>
     <title>Yard Sale</title>
 </head>
 <body>
-    <nav class="nav-bar">
-        <button type="button" class="nav-bar__menu-btn btn" onclick="openNavbarMenu()">
-            <img src="./assets/icons/icon_menu.svg" alt="menu">
-        </button>
-        
-        <div class="nav-bar__section-logo-categories">
-            <a class="nav-bar__link" href="/index.html">
-                <img class="nav-bar__logo" src="./assets/logos/logo_yard_sale.svg" alt="Yard Sale">
-            </a>
-            
-            <form class="nav-bar__categories">
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-all" checked>
-                    <span>All</span>
-                </label>
-
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-clothes">
-                    <span>Clothes</span>
-                </label>
-                
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-electro">
-                    <span>Electronics</span>
-                </label>
-
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-furniture">
-                    <span>Furniture</span>
-                </label>
-                
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-toys">
-                    <span>Toys</span>
-                </label>
-
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-others">
-                    <span>Others</span>
-                </label>
-            </form>
-        </div>
-
-        <div class="nav-bar__section-email-cart">
-            <div class="dropdown d-none d-initial--lg">
-                <span class="dropdown__title nav-bar__email">example@email.com</span>
-                <button type="button" class="dropdown__btn btn">
-                    <img class="dropdown__btn-icon dropdown__btn-icon--sm" src="./assets/icons/arrow.svg" alt=">">
-                </button>
-                <menu class="dropdown__content dropdown__content--slide-bottom">
-                    <a href="#" class="dropdown__option link-unstyled">My orders</a>
-                    <a href="./my-account.html" class="dropdown__option link-unstyled">My account</a>
-                    
-                    <hr class="my-3">
-
-                    <button type="button" class="dropdown__option btn btn--link-primary">
-                        Sign out
-                    </button>
-                </menu>
-            </div>
-            
-            <button type="button" class="nav-bar__cart-btn btn">
-                <img class="nav-bar__cart-icon" src="./assets/icons/icon_shopping_cart.svg" alt="Cart 🛒">
-            </button>
-        </div>
-        
-        <dialog class="nav-bar__menu slide-right">
-            <form class="nav-bar__menu-categories" method="dialog">
-                <button type="submit" class="btn-close"></button>
-                <h2 class="nav-bar__menu-title">CATEGORIES</h2>
-                
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-all" checked>
-                    <span>All</span>
-                </label>
-                
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-clothes">
-                    <span>Clothes</span>
-                </label>
-                
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-electro">
-                    <span>Electronics</span>
-                </label>
-                
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-furniture">
-                    <span>Furniture</span>
-                </label>
-                
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-toys">
-                    <span>Toys</span>
-                </label>
-                
-                <label class="nav-bar__category-label">
-                    <input type="radio" class="nav-bar__category-option" name="category" id="cat-others">
-                    <span>Others</span>
-                </label>
-                
-                <hr class="my-3">
-                
-                <a href="#" class="link-unstyled mb-2">My orders</a>
-                <a href="./my-account.html" class="link-unstyled">My account</a>
-                
-                <section class="nav-bar__menu-section-email">
-                    <p class="nav-bar__menu-email ">example@email.com</p>
-                    <button type="button" class="btn btn--link-primary nav-bar__sign-out-btn">Sign out</button>
-                </section>
-
-            </form>
-        </dialog>
-    </nav>
+    <nav-bar></nav-bar>
     
     <div class="container">
         <main class="products-grid"></main>
@@ -139,22 +26,6 @@
     <script type="module">
         import ProductCard from './components/ProductCard/ProductCard.js';
         import PRODUCT_LIST from './assets/data/ProductList.js';
-        
-        //#region Nav-bar
-        const navbarMenu = document.querySelector('.nav-bar__menu');
-        
-        const openNavbarMenu = () => {
-            navbarMenu.showModal();
-        }
-        
-        const handleWidthNavbarMenuChange = (evt) => {
-            if (evt.matches) {
-                navbarMenu.hasAttribute('open') && navbarMenu.close();
-            }
-        };
-
-        window.matchMedia('(min-width: 992px)').addEventListener("change", handleWidthNavbarMenuChange);
-        //#endregion Nav-bar
 
         const main = document.querySelector('main.products-grid');
         
