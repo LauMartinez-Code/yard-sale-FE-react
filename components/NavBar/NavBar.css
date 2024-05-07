@@ -75,7 +75,7 @@
     margin-top: -20px;
 }
 
-.nav-bar__sign-out-btn {
+.nav-bar__menu-sign-out-btn {
     align-self: flex-start;
     font-size: var(--font-sm);
     margin-top: 5px;

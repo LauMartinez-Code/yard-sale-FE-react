@@ -28,7 +28,8 @@
                 </label>
                 <label class="form-vertical__label">
                     Password
-                    <input type="password" class="form-vertical__input" placeholder="Enter password" maxlength="80" required>
+                    <input type="password" class="form-vertical__input" placeholder="Enter password" 
+                        maxlength="80" pattern=".{8,}" required>
                 </label>
                 <button type="submit" class="btn btn--primary">
                     Log in
@@ -40,5 +41,13 @@
             </form>
         </main>
     </div>
+    <script>
+        const onFormSubmit = event => {
+            event.preventDefault();
+            location.href = './index.html';
+        }
+
+        document.querySelector('form').addEventListener('submit', onFormSubmit);
+    </script>
 </body>
 </html>

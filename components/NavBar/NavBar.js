@@ -70,7 +70,7 @@ export default class NavBar extends HTMLElement {
                             
                             <hr class="my-3">
             
-                            <button type="button" class="dropdown__option btn btn--link-primary">
+                            <button type="button" id="navBarSignOutBtnDesktop" class="dropdown__option btn btn--link-primary">
                                 Sign out
                             </button>
                         </menu>
@@ -93,7 +93,7 @@ export default class NavBar extends HTMLElement {
                         
                         <section class="nav-bar__menu-section-email">
                             <p class="nav-bar__menu-email">example@email.com</p>
-                            <button type="button" class="btn btn--link-primary nav-bar__sign-out-btn">Sign out</button>
+                            <button type="button" id="navBarSignOutBtnMobile" class="btn btn--link-primary nav-bar__menu-sign-out-btn">Sign out</button>
                         </section>
                     </form>
                 </dialog>
@@ -101,11 +101,16 @@ export default class NavBar extends HTMLElement {
         `;
         
         this.querySelector('.nav-bar__menu-btn').addEventListener('click', () => this.onClickMenuBtn());
+        this.querySelectorAll('[id^="navBarSignOutBtn"]').forEach(x => x.addEventListener('click', () => this.onClickSignOutBtn()));
         window.matchMedia('(min-width: 992px)').addEventListener('change', (e) => this.onChangeNavbarMenu(e));
     }
 
     onClickMenuBtn() {
         this.#navbarMenu.showModal();
+    }
+
+    onClickSignOutBtn() {
+        location.href = './login.html';
     }
 
     onChangeNavbarMenu(event) {
