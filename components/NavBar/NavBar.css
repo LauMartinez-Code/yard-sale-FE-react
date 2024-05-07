@@ -51,6 +51,7 @@
     padding: 20px;
     border-radius: 10px;
     position: relative;
+    text-align: left;
 }
 
 .nav-bar__menu::backdrop {

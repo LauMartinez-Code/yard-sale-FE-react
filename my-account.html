@@ -7,50 +7,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="./base-styles.css">
-    <link rel="stylesheet" href="./components/NavBar/NavBar.css">
     <link rel="stylesheet" href="./components/form-vertical.css">
-    <link rel="stylesheet" href="./components/btn.css">
+    <link rel="stylesheet" href="./components/NavBar/NavBar.css">
     <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
     <script type="module" src="./components/NavBar/NavBar.js"></script>
     <title>Yard Sale</title>
 </head>
 <body>
-    <nav-bar></nav-bar>
-    
-    <main class="container container-flex-center--md container-sm--md">
-        
-        <form class="form-vertical" readonly>
-            <h1 class="title-h1 mb-4">My account</h1>
+    <div class="container-flex-center--md">
+        <nav-bar class="container-flex-center__header"></nav-bar>
 
-            <label class="form-vertical__label">
-                Name
-                <textarea type="text" id="name" class="form-vertical__input" 
-                    placeholder="Enter name" maxlength="80" required readonly></textarea>
-            </label>
-
-            <label class="form-vertical__label">
-                Email address
-                <input type="email" id="email" class="form-vertical__input" 
-                    placeholder="example@example.com" maxlength="80" required readonly>
-            </label>
-
-            <div id="password">
+        <main class="container-flex-center__body container-sm--md">
+            <form class="form-vertical" readonly>
+                <h1 class="title-h1 mb-2">My account</h1>
                 <label class="form-vertical__label">
-                    Password
+                    Name
+                    <textarea type="text" id="name" class="form-vertical__input"
+                        placeholder="Enter name" maxlength="80" required readonly></textarea>
                 </label>
-                <a id="passwordLink" href="./create-new-password.html" class="link">Change password</a>
-            </div>
-    
-            <button type="button" id="editBtn" class="btn btn--outline-primary fixed-bottom fixed-bottom-reset--md my-3">
-                Edit
-            </button>
-
-            <button type="submit" id="saveBtn" class="d-none btn btn--primary fixed-bottom fixed-bottom-reset--md my-3">
-                Save
-            </button>
-        </form>
+                <label class="form-vertical__label">
+                    Email address
+                    <input type="email" id="email" class="form-vertical__input"
+                        placeholder="example@example.com" maxlength="80" required readonly>
+                </label>
+                <div id="password">
+                    <label class="form-vertical__label">
+                        Password
+                    </label>
+                    <a id="passwordLink" href="./create-new-password.html" class="link">Change password</a>
+                </div>
         
-    </main>
+                <button type="button" id="editBtn" class="btn btn--outline-primary fixed-bottom fixed-bottom-reset--md my-3">
+                    Edit
+                </button>
+                <button type="submit" id="saveBtn" class="d-none btn btn--primary fixed-bottom fixed-bottom-reset--md my-3">
+                    Save
+                </button>
+            </form>
+        
+        </main>
+    </div>
 
     <script>
         const form = document.querySelector('form'),
