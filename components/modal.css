@@ -58,4 +58,8 @@
     .modal__title {
         font-size: var(--font-lg);
     }
+
+    .modal__body .btn-group {
+        flex-direction: row;
+    }
 }

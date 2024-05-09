@@ -83,9 +83,3 @@
     justify-content: space-between;
     gap: 15px;
 }
-
-@media (min-width: 768px) {
-    .btn-group {
-        flex-direction: row;
-    }
-}

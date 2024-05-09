@@ -40,9 +40,15 @@
                 <button type="button" id="editBtn" class="btn btn--outline-primary fixed-bottom fixed-bottom-reset--md my-3">
                     Edit
                 </button>
-                <button type="submit" id="saveBtn" class="d-none btn btn--primary fixed-bottom fixed-bottom-reset--md my-3">
-                    Save
-                </button>
+
+                <div id="saveAndCancelBtn" class="d-none btn-group fixed-bottom fixed-bottom-reset--md">
+                    <button type="submit" id="saveBtn" class="btn btn--primary">
+                        Save
+                    </button>
+                    <button type="button" id="cancelBtn" class="btn btn--outline-primary mb-3">
+                        Cancel
+                    </button>
+                </div>
             </form>
         
         </main>
@@ -54,8 +60,8 @@
             emailInput = document.getElementById('email'),
             passwordSection = document.getElementById('password'),
             editBtn = document.getElementById('editBtn'),
-            saveBtn = document.getElementById('saveBtn');
-
+            saveCancelBtn = document.getElementById('saveAndCancelBtn');
+            
         const init = () => {
             let user = JSON.parse(localStorage.getItem('yardSaleUser')) ?? { name:"John Doe", email: 'john.doe@email.com' };
             
@@ -63,31 +69,36 @@
             emailInput.value = user.email;
         }
         
-        init();
-        
         const enableEdition = () => {
             [form, nameInput, emailInput].forEach(e => e.removeAttribute('readonly'));
             
             passwordSection.classList.add('d-none');
             editBtn.classList.add('d-none');
-            saveBtn.classList.remove('d-none');
+            saveCancelBtn.classList.remove('d-none');
         }
         
         const saveChanges = (event) => {
-            event.preventDefault();
             
-            localStorage.setItem('yardSaleUser',JSON.stringify({
-                name: nameInput.value,
-                email: emailInput.value
-            }));
-
+            if (event.type === 'submit') {
+                event.preventDefault();
+                localStorage.setItem('yardSaleUser',JSON.stringify({
+                    name: nameInput.value,
+                    email: emailInput.value
+                }));
+            } 
+            else {
+                init();
+            }
+            
             [form, nameInput, emailInput].forEach(e => e.setAttribute('readonly', true));
             
-            [passwordSection, editBtn, saveBtn].forEach(e => e.classList.toggle('d-none'));
+            [passwordSection, editBtn, saveCancelBtn].forEach(e => e.classList.toggle('d-none'));
         }
-
+        
         editBtn.addEventListener('click', enableEdition);
+        document.getElementById('cancelBtn').addEventListener('click', saveChanges);
         form.addEventListener('submit', saveChanges);
+        init();
     </script>
 </body>
 </html>
