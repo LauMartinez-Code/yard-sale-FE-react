@@ -8,43 +8,46 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap">
     <link rel="stylesheet" href="./base-styles.css">
     <link rel="stylesheet" href="./components/form-vertical.css">
-    <link rel="stylesheet" href="./components/btn.css">
-    <link rel="stylesheet" href="./components/spacing.css">
-    <link rel="shortcut icon" href="./logos/favicon_yard_sale.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./components/NavBar/NavBar.css">
+    <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
+    <script type="module" src="./components/NavBar/NavBar.js"></script>
     <title>Yard Sale</title>
 </head>
 <body>
-    <main class="container-flex-center container-sm">
-        <img class="main-logo" src="./logos/logo_yard_sale.svg" alt="Site's Logo">
-        <h1 class="title-h1">Sign up</h1>
-        <h4 class="subtitle">Fill the information to create your account</h4>
+    <div class="container-flex-center">
+        <nav-bar class="container-flex-center__header d-none d-initial--md"></nav-bar>
+        
+        <main class="container-flex-center__body container-sm">
+            <a href="./index.html">
+                <img class="main-logo" src="./assets/logos/logo_yard_sale.svg" alt="Site's Logo">
+            </a>
+            <h1 class="title-h1">Sign up</h1>
+            <h4 class="subtitle">Fill the information to create your account</h4>
 
-        <form class="form-vertical">
-            <label class="form-vertical__label">
-                Name
-                <textarea type="text" id="name" class="form-vertical__input" placeholder="Enter name" maxlength="80" required></textarea>
-            </label>
-
-            <label class="form-vertical__label">
-                Email address
-                <input type="email" id="email" class="form-vertical__input" placeholder="example@example.com" maxlength="80" required>
-            </label>
-
-            <label class="form-vertical__label">
-                Password 
-                <input type="password" class="form-vertical__input" placeholder="Enter password" 
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="80" required>
-                
-                <small class="form-vertical__text-small">
-                    It must contain 8 or more characters, in which there is at least one number and one upper and lower case letter
-                </small>
-            </label>
-
-            <button type="submit" class="btn btn--primary fixed-bottom-flex fixed-bottom-reset--md mb-3">
-                Create account
-            </button>
-        </form>
-    </main>
+            <form class="form-vertical">
+                <label class="form-vertical__label">
+                    Name
+                    <textarea type="text" id="name" class="form-vertical__input" placeholder="Enter name" maxlength="80" required></textarea>
+                </label>
+                <label class="form-vertical__label">
+                    Email address
+                    <input type="email" id="email" class="form-vertical__input" placeholder="example@example.com" maxlength="80" required>
+                </label>
+                <label class="form-vertical__label">
+                    Password
+                    <input type="password" class="form-vertical__input" placeholder="Enter password"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="80" required>
+        
+                    <small class="form-vertical__text-small">
+                        It must contain 8 or more characters, in which there is at least one number and one upper and lower case letter
+                    </small>
+                </label>
+                <button type="submit" class="btn btn--primary fixed-bottom-flex fixed-bottom-reset--md mb-3">
+                    Create account
+                </button>
+            </form>
+        </main>
+    </div>
 
     <script>
         const createAccount = (event) => {

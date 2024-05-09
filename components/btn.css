@@ -3,10 +3,11 @@
     text-align: center;
     text-decoration: none;
     font-size: inherit;
-    font-weight: 700;
+    font-weight: bold;
     padding: 16px;
     border-radius: 10px;
     border: 1px solid transparent;
+    background: transparent;
     cursor: pointer;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
@@ -81,10 +82,4 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 15px;
-}
-
-@media (min-width: 768px) {
-    .btn-group {
-        flex-direction: row;
-    }
 }
