@@ -51,7 +51,7 @@ export default class NavBar extends HTMLElement {
                 </button>
                 
                 <div class="nav-bar__section-logo-categories">
-                    <a class="nav-bar__link" href="/index.html">
+                    <a class="nav-bar__link" href="./index.html">
                         <img class="nav-bar__logo" src="./assets/logos/logo_yard_sale.svg" alt="Yard Sale">
                     </a>
                     
