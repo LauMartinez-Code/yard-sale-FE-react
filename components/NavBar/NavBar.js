@@ -65,7 +65,7 @@ export default class NavBar extends HTMLElement {
                             <img class="dropdown__btn-icon dropdown__btn-icon--sm" src="./assets/icons/arrow.svg" alt=">">
                         </button>
                         <menu class="dropdown__content dropdown__content--slide-bottom">
-                            <a href="#" class="dropdown__option link-unstyled">My orders</a>
+                            <a href="./my-orders.html" class="dropdown__option link-unstyled">My orders</a>
                             <a href="./my-account.html" class="dropdown__option link-unstyled">My account</a>
                             
                             <hr class="my-3">
@@ -88,7 +88,7 @@ export default class NavBar extends HTMLElement {
             
                         <hr class="my-3">
                         
-                        <a href="#" class="link-unstyled mb-2">My orders</a>
+                        <a href="./my-orders.html" class="link-unstyled mb-2">My orders</a>
                         <a href="./my-account.html" class="link-unstyled">My account</a>
                         
                         <section class="nav-bar__menu-section-email">

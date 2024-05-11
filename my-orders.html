@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="./base-styles.css">
+    <link rel="stylesheet" href="./components/NavBar/NavBar.css">
+    <link rel="stylesheet" href="./components/OrderItem/OrderItem.css">
+    <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
+    <script type="module" src="./components/NavBar/NavBar.js"></script>
+    <script type="module" src="./components/OrderItem/OrderItem.js"></script>
+    <title>Yard Sale</title>
+</head>
+<body>
+    <nav-bar></nav-bar>
+    <main class="container container-sm--md mx-auto--md">
+        
+        <section id="OrderList">
+            <h1 class="title-h1 mb-4">My orders</h1>
+        </section>
+        <section id="OrderDetail" class="d-none">
+            <h1 class="title-h1 mb-4">Order #ID</h1>
+        </section>
+    </main>
+
+    <script type="module">
+        import orderList from './assets/data/OrderList.js';
+        import OrderItem from './components/OrderItem/OrderItem.js';
+
+        for (const order of orderList) {
+            document.getElementById('OrderList').append(new OrderItem(order));
+        }
+    </script>
+</body>
+</html>
