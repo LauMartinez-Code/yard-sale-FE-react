@@ -11,19 +11,16 @@
     <link rel="stylesheet" href="./components/OrderItem/OrderItem.css">
     <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
     <script type="module" src="./components/NavBar/NavBar.js"></script>
+    <script type="module" src="./components/MainTitle/MainTitle.js"></script>
     <script type="module" src="./components/OrderItem/OrderItem.js"></script>
     <title>Yard Sale</title>
 </head>
 <body>
     <nav-bar></nav-bar>
     <main class="container container-sm--md mx-auto--md">
-        
-        <section id="OrderList">
-            <h1 class="title-h1 mb-4">My orders</h1>
-        </section>
-        <section id="OrderDetail" class="d-none">
-            <h1 class="title-h1 mb-4">Order #ID</h1>
-        </section>
+        <main-title title-text="My orders"></main-title>
+        <section id="OrderList"></section>
+        <section id="OrderDetail" class="d-none"></section>
     </main>
 
     <script type="module">

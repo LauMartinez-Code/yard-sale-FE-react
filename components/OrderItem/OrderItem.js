@@ -1,22 +1,28 @@
+//import orderList from '../../assets/data/OrderList';
 import { toCurrencyFormat } from '../CommonUtilities.js';
 export default class OrderItem extends HTMLElement {
     orderID;
     date;
     amount;
     items;
-    constructor(order) {
+
+    /** 
+     * @param isForOrderDetail - Represents a copy of an OrderItem that's showing from #OrderDetail
+     * and it has a different background-color but it hasn't a "See details" button.
+     *  */
+    constructor(order, isForOrderDetail = false) {
         super();
         this.orderID = order.orderID;
         this.date = order.date;
         this.amount = order.amount;
         this.items = order.items;
-        this.render();
+        this.render(isForOrderDetail);
     }
 
-    render() {
+render(isForOrderDetail) {
         this.innerHTML = `
             <article class="order-item">
-                <div class="order-item__info">
+                <div>
                     <p class="order-item__date">${this.date}</p>
                     <p>
                         <small class="order-item__quantity">${this.items} article${this.items > 1 ? 's' : ''}</small>
@@ -31,13 +37,32 @@ export default class OrderItem extends HTMLElement {
             </article>
         `;
 
-        this.querySelector('button').addEventListener('click', () => this.onClickDetailsBtn());
+        if (isForOrderDetail) {
+            this.querySelector('button').remove();
+            this.querySelector('.order-item').style.backgroundColor = 'var(--text-input-field)';
+            document.querySelector('main-title').setAttribute('title-text', `Order #${this.orderID}`) ;
+            document.querySelector('main-title').setOnClickBtnEvent(this.onClickMainTitleCallback.bind(this));
+            //add product list
+        }
+        else {
+            this.querySelector('button').addEventListener('click', () => this.onClickDetailsBtn());
+        }
     }
-
+    
     onClickDetailsBtn() {
         document.getElementById('OrderList').classList.add('d-none');
         document.getElementById('OrderDetail').classList.toggle('d-none');
+        document.getElementById('OrderDetail').append(new OrderItem(this, true));
     }
+    
+    onClickMainTitleCallback() {
+        document.getElementById('OrderList').classList.toggle('d-none');
+        document.getElementById('OrderDetail').classList.toggle('d-none');
+        document.querySelector('main-title').onChangeTitle();
+        document.querySelector('main-title button').classList.add('d-none');
+        this.remove();
+    }
+
 }
 
 customElements.define("order-item", OrderItem);

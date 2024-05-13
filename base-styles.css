@@ -86,6 +86,11 @@ body:has(dialog[open]) {
     margin-bottom: 8px;
 }
 
+.title-h1__back-btn {
+    transform: rotate(180deg);
+    width: 8px;
+}
+
 .subtitle {
     font-weight: var(--font-weight-regular);
     font-size: var(--font-md);
