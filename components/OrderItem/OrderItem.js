@@ -5,6 +5,7 @@ export default class OrderItem extends HTMLElement {
     date;
     amount;
     items;
+    itemsID;
 
     /** 
      * @param isForOrderDetail - Represents a copy of an OrderItem that's showing from #OrderDetail
@@ -16,6 +17,7 @@ export default class OrderItem extends HTMLElement {
         this.date = order.date;
         this.amount = order.amount;
         this.items = order.items;
+        this.itemsID = order.itemsID;
         this.render(isForOrderDetail);
     }
 
@@ -30,8 +32,8 @@ render(isForOrderDetail) {
                 </div>
                 <div>
                     <span class="order-item__amount">${toCurrencyFormat(this.amount)}</span>
-                    <button type="button" class="btn p-0" title="See details">
-                        <img src="./assets/icons/arrow.svg" alt=">" class="order-item__btn-icon">
+                    <button type="button" class="order-item__btn-details btn p-0" title="See details">
+                        <img src="./assets/icons/arrow.svg" alt=">" class="order-item__btn-details-icon">
                     </button>
                 </div>
             </article>

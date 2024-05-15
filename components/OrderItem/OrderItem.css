@@ -8,6 +8,10 @@
     margin-bottom: 15px;
 }
 
+.order-item--grey {
+    background-color: var(--text-input-field);
+}
+
 .order-item__date {
     font-weight: bold;
     color: var(--black);
@@ -18,12 +22,15 @@
 }
 
 .order-item__amount {
-    margin-right: 10px;
     font-weight: bold;
     color: var(--dark);
 }
 
-.order-item__btn-icon {
+.order-item__btn-details {
+    margin-left: 10px;
+}
+
+.order-item__btn-details-icon {
     width: 7.5px;
 }
 

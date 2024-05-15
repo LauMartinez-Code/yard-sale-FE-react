@@ -77,6 +77,14 @@
     color: rgba(157, 5, 5, 0.8);
 }
 
+.btn-close--thin {
+    font-weight: 500;
+}
+
+.btn-close--grey {
+    color: var(--very-light-pink);
+}
+
 .btn-group {
     display: flex;
     flex-direction: column;

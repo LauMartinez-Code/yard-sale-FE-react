@@ -1,3 +1,4 @@
+import { toCurrencyFormat } from '../CommonUtilities.js';
 export default class ProductCard extends HTMLElement {
     title;
     price;
@@ -22,7 +23,7 @@ export default class ProductCard extends HTMLElement {
                 <div class="product-card__info">
                     <div>
                         <p class="product-card__title"></p>
-                        <p class="product-card__price">$${this.price}</p>
+                        <p class="product-card__price">${toCurrencyFormat(this.price)}</p>
                     </div>
             
                     <button type="button" class="btn product-card__cart-button">
