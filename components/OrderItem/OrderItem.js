@@ -1,5 +1,7 @@
-//import orderList from '../../assets/data/OrderList';
+import ProductItem from '../ProductItem/ProductItem.js';
+import PRODUCT_LIST from '../../assets/data/ProductList.js';
 import { toCurrencyFormat } from '../CommonUtilities.js';
+const OrderDetailElement = document.getElementById('OrderDetail');
 export default class OrderItem extends HTMLElement {
     orderID;
     date;
@@ -7,7 +9,7 @@ export default class OrderItem extends HTMLElement {
     items;
     itemsID;
 
-    /** 
+    /**
      * @param isForOrderDetail - Represents a copy of an OrderItem that's showing from #OrderDetail
      * and it has a different background-color but it hasn't a "See details" button.
      *  */
@@ -41,10 +43,7 @@ render(isForOrderDetail) {
 
         if (isForOrderDetail) {
             this.querySelector('button').remove();
-            this.querySelector('.order-item').style.backgroundColor = 'var(--text-input-field)';
-            document.querySelector('main-title').setAttribute('title-text', `Order #${this.orderID}`) ;
-            document.querySelector('main-title').setOnClickBtnEvent(this.onClickMainTitleCallback.bind(this));
-            //add product list
+            this.querySelector('.order-item').classList.add('order-item--grey');
         }
         else {
             this.querySelector('button').addEventListener('click', () => this.onClickDetailsBtn());
@@ -53,16 +52,28 @@ render(isForOrderDetail) {
     
     onClickDetailsBtn() {
         document.getElementById('OrderList').classList.add('d-none');
-        document.getElementById('OrderDetail').classList.toggle('d-none');
-        document.getElementById('OrderDetail').append(new OrderItem(this, true));
+        OrderDetailElement.classList.toggle('d-none');
+        OrderDetailElement.append(new OrderItem(this, true));
+
+        document.querySelector('main-title').setAttribute('title-text', `Order #${this.orderID}`) ;
+        document.querySelector('main-title').setOnClickBtnEvent(this.#onClickMainTitleCallback);
+        
+        this.itemsID.forEach( itemId => {
+            const product = PRODUCT_LIST.find(prod => prod.id == itemId);
+            product && OrderDetailElement.append(new ProductItem(product));
+            console.log(product);
+        });
+
     }
     
-    onClickMainTitleCallback() {
+    #onClickMainTitleCallback() {
         document.getElementById('OrderList').classList.toggle('d-none');
-        document.getElementById('OrderDetail').classList.toggle('d-none');
+        OrderDetailElement.classList.toggle('d-none');
         document.querySelector('main-title').onChangeTitle();
         document.querySelector('main-title button').classList.add('d-none');
-        this.remove();
+        while (OrderDetailElement.firstChild) {
+            OrderDetailElement.removeChild(OrderDetailElement.firstChild);
+        }
     }
 
 }

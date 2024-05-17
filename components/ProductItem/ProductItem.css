@@ -1,0 +1,26 @@
+.product-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 15px;
+}
+
+.product-item__image {
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.product-item__title {
+    color: var(--very-light-pink);
+}
+
+.product-item__price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: var(--dark);
+}
