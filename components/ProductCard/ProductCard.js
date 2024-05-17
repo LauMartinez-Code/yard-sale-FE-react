@@ -1,4 +1,4 @@
-import { toCurrencyFormat } from '../CommonUtilities.js';
+import { toCurrencyFormat, setTextEllipsis } from '../CommonUtilities.js';
 export default class ProductCard extends HTMLElement {
     title;
     price;
@@ -33,22 +33,10 @@ export default class ProductCard extends HTMLElement {
             </article>
         `;
         
-        this.setTitleEllipsis();
+        setTextEllipsis(this.querySelector('.product-card__title'), this.title);
         this.setCartButton();
         this.querySelector('.product-card__cart-button').addEventListener('click', () => this.onClickCartButton());
         this.isInCart && this.classList.add('product-in-cart');
-    }
-
-    setTitleEllipsis() {
-        const element = this.querySelector('.product-card__title');
-        
-        if(this.title.length > 45) {
-            element.setAttribute('title', this.title);
-            element.textContent = this.title.substring(0,41) + '...';
-        }
-        else {
-            element.textContent = this.title;
-        }
     }
 
     setCartButton() {

@@ -1,4 +1,4 @@
-import { toCurrencyFormat } from '../CommonUtilities.js';
+import { toCurrencyFormat, setTextEllipsis } from '../CommonUtilities.js';
 
 export default class ProductItem extends HTMLElement {
     id;
@@ -22,13 +22,15 @@ export default class ProductItem extends HTMLElement {
         this.innerHTML = `
             <article class="product-item">
                 <img class="product-item__image" src="${this.imgSrc}" />
-                <p class="product-item__title">${this.title}</p>
+                <p class="product-item__title"></p>
 
                 <div class="product-item__price">
                     <span>${toCurrencyFormat(this.price)}</span>
                 </div>
             </article>
         `;
+
+        setTextEllipsis(this.querySelector('.product-item__title'), this.title);
 
         if (isRemovable) {
             this.querySelector('.product-item__price').insertAdjacentHTML('beforeend',`

@@ -61,7 +61,6 @@ render(isForOrderDetail) {
         this.itemsID.forEach( itemId => {
             const product = PRODUCT_LIST.find(prod => prod.id == itemId);
             product && OrderDetailElement.append(new ProductItem(product));
-            console.log(product);
         });
 
     }
