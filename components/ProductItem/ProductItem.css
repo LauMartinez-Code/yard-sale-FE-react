@@ -8,8 +8,8 @@
 
 .product-item__image {
     border-radius: 20px;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
 }
 
@@ -23,4 +23,11 @@
     gap: 10px;
     font-weight: bold;
     color: var(--dark);
+}
+
+@media (min-width: 768px) {
+    .product-item__image {
+        width: 100px;
+        height: 100px;
+    }
 }
