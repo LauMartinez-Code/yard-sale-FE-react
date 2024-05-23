@@ -1,3 +1,4 @@
+import ShoppingCart from './../ShoppingCart/ShoppingCart.js';
 const navBarCategoryLabelTemplate = (id) => `
     <label class="nav-bar__category-label">
         <input type="radio" class="nav-bar__category-option" name="category" id="cat-all-${id}" checked>
@@ -76,37 +77,53 @@ export default class NavBar extends HTMLElement {
                         </menu>
                     </div>
                     
-                    <button type="button" class="nav-bar__cart-btn btn">
+                    <button type="button" class="nav-bar__cart-btn btn" title="Shopping cart">
                         <img class="nav-bar__cart-icon" src="./assets/icons/icon_shopping_cart.svg" alt="Cart 🛒">
                     </button>
                 </div>
                 
-                <dialog class="nav-bar__menu slide-right">
-                    <form class="nav-bar__menu-categories" method="dialog">
-                        <button type="submit" class="btn-close" title="Close"></button>
-                        <h2 class="nav-bar__menu-title">CATEGORIES</h2>
-            
-                        <hr class="my-3">
-                        
-                        <a href="./my-orders.html" class="link-unstyled mb-2">My orders</a>
-                        <a href="./my-account.html" class="link-unstyled">My account</a>
-                        
-                        <section class="nav-bar__menu-section-email">
-                            <p class="nav-bar__menu-email">example@email.com</p>
-                            <button type="button" id="navBarSignOutBtnMobile" class="btn btn--link-primary nav-bar__menu-sign-out-btn">Sign out</button>
-                        </section>
-                    </form>
-                </dialog>
             </nav>
+
+            <dialog class="nav-bar__menu slide-right">
+                <form class="nav-bar__menu-categories" method="dialog">
+                    <button type="submit" class="btn-close" title="Close"></button>
+                    <h2 class="nav-bar__menu-title">CATEGORIES</h2>
+        
+                    <hr class="my-3">
+                    
+                    <a href="./my-orders.html" class="link-unstyled mb-2">My orders</a>
+                    <a href="./my-account.html" class="link-unstyled">My account</a>
+                    
+                    <section class="nav-bar__menu-section-email">
+                        <p class="nav-bar__menu-email">example@email.com</p>
+                        <button type="button" id="navBarSignOutBtnMobile" class="btn btn--link-primary nav-bar__menu-sign-out-btn">Sign out</button>
+                    </section>
+                </form>
+            </dialog>
+            
+            <shopping-cart></shopping-cart>
         `;
         
         this.querySelector('.nav-bar__menu-btn').addEventListener('click', () => this.onClickMenuBtn());
+        this.querySelector('.nav-bar__cart-btn').addEventListener('click', () => this.onClickCartBtn());
         this.querySelectorAll('[id^="navBarSignOutBtn"]').forEach(x => x.addEventListener('click', () => this.onClickSignOutBtn()));
         window.matchMedia('(min-width: 992px)').addEventListener('change', (e) => this.onChangeNavbarMenu(e));
     }
 
     onClickMenuBtn() {
         this.#navbarMenu.showModal();
+    }
+
+    onClickCartBtn() {
+        const cart = this.querySelector('.shopping-cart');
+        
+        if (cart.hasAttribute('open')) {
+            cart.close();
+        }
+        else {
+            window.scroll(0,0);
+            cart.show();
+        }
     }
 
     onClickSignOutBtn() {
@@ -120,4 +137,5 @@ export default class NavBar extends HTMLElement {
     }
 }
 
+customElements.define("shopping-cart", ShoppingCart);
 customElements.define("nav-bar", NavBar);

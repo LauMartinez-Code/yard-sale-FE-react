@@ -42,8 +42,11 @@ export default class ProductItem extends HTMLElement {
     }
 
     onClickRemoveBtn() {
+        this.dispatchEvent(new CustomEvent('shopping-cart:removed-product', {
+            bubbles: true,
+            cancelable: true
+        }));
         this.remove();
-        //TODO actualizar precio carrito
     }
 }
 
