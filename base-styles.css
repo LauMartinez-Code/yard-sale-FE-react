@@ -94,6 +94,12 @@ body:has(dialog[open]) {
     width: 8px;
 }
 
+.title-h2 {
+    font-weight: bold;
+    font-size: var(--font-md);
+    margin-bottom: 8px;
+}
+
 .subtitle {
     font-weight: var(--font-weight-regular);
     font-size: var(--font-md);
@@ -221,6 +227,10 @@ small {
     
     .title-h1 {
         font-size: var(--font-xl);
+    }
+
+    .title-h2 {
+        font-size: var(--font-lg);
     }
     
     .subtitle {

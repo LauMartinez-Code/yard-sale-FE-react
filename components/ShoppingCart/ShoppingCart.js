@@ -29,7 +29,7 @@ export default class ShoppingCart extends HTMLElement {
                             <span>Total</span>
                             <span class="shopping-cart__amount">$0</span>
                         </div>
-                        
+
                         <button type="button" class="btn btn--primary btn--block">Checkout</button>
                     </footer>
                 </div>
@@ -43,19 +43,32 @@ export default class ShoppingCart extends HTMLElement {
                 new ProductItem(product, true)
             );
         });
-
+        
         this.#updateAmount();
-
+        
         this.addEventListener('shopping-cart:removed-product', (e) => this.onRemoveProduct(e));
     }
-
+    
     #updateAmount() {
         this.querySelector('.shopping-cart__amount').textContent = toCurrencyFormat(this.amount);
     }
-
+    
     onRemoveProduct(event) {
         this.amount -= event.srcElement?.price;
         this.#updateAmount();
         event.stopPropagation();
+        
+        if(this.amount <= 0) {
+            const cartBody = this.querySelector('.shopping-cart__body');
+
+            cartBody.classList.add('shopping-cart__body--cart-empty');
+            cartBody.insertAdjacentHTML('beforeend', `
+                <img class="mb-3" src="./assets/icons/shopping_bag_icon.svg" alt="🛒" width="100">
+                <h1 class="title-h2">Shopping cart is empty!</h1>
+                <p>The products you add to the cart will be seen here</p>
+            `);
+
+            this.querySelector('.shopping-cart__footer').classList.add('d-none');
+        }
     }
 }
