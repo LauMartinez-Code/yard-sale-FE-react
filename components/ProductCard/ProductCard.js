@@ -18,7 +18,7 @@ export default class ProductCard extends HTMLElement {
         this.innerHTML = `
             <article class="product-card">
                 <figure>
-                    <img class="product-card__image" src="${this.coverSrc}" alt="product cover">
+                    <img class="product-card__image" src="${this.coverSrc}" alt="product cover" loading="lazy">
                 </figure>
                 <div class="product-card__info">
                     <div>

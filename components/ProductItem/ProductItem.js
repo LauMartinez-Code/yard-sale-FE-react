@@ -21,7 +21,7 @@ export default class ProductItem extends HTMLElement {
     render(isRemovable) {
         this.innerHTML = `
             <article class="product-item">
-                <img class="product-item__image" src="${this.imgSrc}" />
+                <img class="product-item__image" src="${this.imgSrc}" loading="lazy" >
                 <p class="product-item__title"></p>
 
                 <div class="product-item__price">
