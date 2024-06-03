@@ -25,15 +25,23 @@
                 <label class="form-vertical__label">
                     Email address
                     <input type="email" class="form-vertical__input" placeholder="example@example.com" maxlength="80" required>
+                    <span class="form-vertical__invalid-feedback">
+                        Enter a valid email address
+                    </span>
                 </label>
                 <label class="form-vertical__label">
                     Password
                     <input type="password" class="form-vertical__input" placeholder="Enter password" 
                         maxlength="80" pattern=".{8,}" required>
+                    <span class="form-vertical__invalid-feedback">
+                        Enter a valid password. <br> Remember must be at least 8 characters long
+                    </span>
                 </label>
-                <button type="submit" class="btn btn--primary">
+
+                <button type="submit" class="btn btn--primary mt-3">
                     Log in
                 </button>
+
                 <a class="link mt-2 mb-5 mx-auto" href="./password-recovery.html">Forgot my password</a>
                 <a class="btn btn--outline-primary fixed-bottom-flex fixed-bottom-reset--md mb-3" href="./create-account.html">
                     Sign up
@@ -41,13 +49,17 @@
             </form>
         </main>
     </div>
-    <script>
+    
+    <script type="module">
+        import { onTrySubmitMainForm } from "./components/CommonUtilities.js";
+        
         const onFormSubmit = event => {
             event.preventDefault();
             location.href = './index.html';
         }
 
-        document.querySelector('form').addEventListener('submit', onFormSubmit);
+        const form = document.querySelector('form').addEventListener('submit', onFormSubmit);
+        onTrySubmitMainForm();
     </script>
 </body>
 </html>
