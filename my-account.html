@@ -23,12 +23,18 @@
                 <label class="form-vertical__label">
                     Name
                     <textarea type="text" id="name" class="form-vertical__input"
-                        placeholder="Enter name" maxlength="80" required readonly></textarea>
+                        placeholder="Enter name" maxlength="80" rows="1" required readonly></textarea>
+                    <span class="form-vertical__invalid-feedback">
+                        Enter a valid name
+                    </span>
                 </label>
                 <label class="form-vertical__label">
                     Email address
                     <input type="email" id="email" class="form-vertical__input"
                         placeholder="example@example.com" maxlength="80" required readonly>
+                    <span class="form-vertical__invalid-feedback">
+                        Enter a valid email address
+                    </span>
                 </label>
                 <div id="password">
                     <label class="form-vertical__label">

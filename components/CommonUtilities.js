@@ -28,3 +28,9 @@ export const setTextEllipsis = (element, text) => {
         element.textContent = text;
     }
 };
+
+/** Agrega la clase `.submitted` al primer fomulario dentro de `<main>`
+ *  para frozar los mensajes de validacion establecidos en los campos que correspondan */
+export const onTrySubmitMainForm = () => {
+    document.querySelector('main form button[type="submit"]').addEventListener('click', () => document.querySelector('main form').classList.add('submitted'), { once: true } );
+};

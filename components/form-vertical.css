@@ -27,33 +27,65 @@
     border-radius: 5px;
     border: .8px solid transparent;
     background: var(--text-input-field);
+    
+    &:read-only {
+        padding: 0;
+        background: none;
+        border: none;
+        
+        &:focus {
+            border: none;
+            box-shadow: none;
+        }
+    }
+    
+    &:focus {
+        color: var(--dark);
+        border-color: var(--hospital-green-dark);
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem var(--hospital-green);
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    &:user-invalid {
+        border-color: var(--red-error);
+    
+        &:focus {
+            box-shadow: 0 0 0 .3rem rgba(220,53,69,.25);
+        }
+
+        + .form-vertical__invalid-feedback {
+            display: block;
+        }
+    }
 }
 
-.form-vertical__input:read-only {
-    padding: 0;
-    background: none;
-    border: none;
+.form-vertical__invalid-feedback {
+    display: none;
+    margin-top: .4rem;
+    font-size: var(--font-sm);
+    font-weight: var(--font-weight-regular);
+    color: var(--red-error);
 }
 
-.form-vertical__input:read-only:focus {
-    border: none;
-    box-shadow: none;
-}
+form.submitted .form-vertical__input:invalid {
+    border-color: var(--red-error);
 
-.form-vertical__input:focus {
-    color: var(--dark);
-    border-color: var(--hospital-green-dark);
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem var(--hospital-green);
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.form-vertical__label:last-of-type + button[type="submit"] {
-    margin-top: 10px;
+    &:focus {
+        box-shadow: 0 0 0 .3rem rgba(220,53,69,.25);
+    }
+    
+    + .form-vertical__invalid-feedback {
+        display: block;
+    }
 }
 
 .form-vertical__text-small {
     font-weight: var(--font-weight-regular);
     font-size: var(--font-smaller);
     color: var(--very-light-pink);
+
+    .form-vertical__input:user-invalid + &, .submitted .form-vertical__input:invalid + & {
+        color: var(--red-error);
+    }
 }
