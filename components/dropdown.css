@@ -16,6 +16,10 @@
     transform: rotate(90deg);
     width: 6px;
     transition: transform .3s ease-in-out;
+
+    .dropdown:hover & {
+        transform: rotate(-90deg);
+    }
 }
 
 .dropdown__btn-icon--sm {
@@ -39,10 +43,10 @@
     font-size: var(--font-sm);
     font-weight: bold;
     text-align: end;
-}
-
-.dropdown__option:hover {
-    background-color: rgb(234, 234, 234);
+    
+    &:hover {
+        background-color: rgb(234, 234, 234);
+    }
 }
 
 .dropdown__option--sm {
@@ -52,10 +56,6 @@
 .dropdown:hover > .dropdown__content {
     display: flex;
     flex-direction: column;
-}
-
-.dropdown:hover .dropdown__btn-icon {
-    transform: rotate(-90deg);
 }
 
 .dropdown__content--slide-bottom { animation:dropdown__slide-bottom .3s linear both }
