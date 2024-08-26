@@ -55,14 +55,18 @@
     border-radius: 10px;
     position: relative;
     text-align: left;
-}
+    
+    &::backdrop {
+        backdrop-filter: blur(2px);
+    }
 
-.nav-bar__menu::backdrop {
-    backdrop-filter: blur(2px);
-}
+    & .btn-close {
+        align-self: flex-end;
+    }
 
-.nav-bar__menu .btn-close {
-    align-self: flex-end;
+    @media (width >= 778px) {
+        width: 40vw;
+    }
 }
 
 .nav-bar__menu-categories {
@@ -88,12 +92,6 @@
     .nav-bar__menu-section-email {
         position: absolute;
         bottom: 25px;
-    }
-}
-
-@media (min-width: 778px) {
-    .nav-bar__menu {
-        width: 40vw;
     }
 }
 

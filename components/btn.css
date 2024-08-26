@@ -15,31 +15,31 @@
 .btn--primary {
     color: var(--white);
     background: var(--hospital-green);
-}
+    
+    &:hover {
+        background: var(--hospital-green-dark);
+    }
 
-.btn--primary:hover {
-    background: var(--hospital-green-dark);
-}
-
-.btn--primary:active {
-    border-color: var(--white);
-    box-shadow: 0 0 0 0.2rem var(--hospital-green);
+    &:active {
+        border-color: var(--white);
+        box-shadow: 0 0 0 0.2rem var(--hospital-green);
+    }
 }
 
 .btn--outline-primary {
     color: var(--hospital-green);
     border: 1px solid var(--hospital-green);
     background: var(--white);
-}
-
-.btn--outline-primary:hover {
-    color: var(--hospital-green-dark);
-    background: var(--text-input-field);
-}
-
-.btn--outline-primary:active {
-    border-color: var(--hospital-green-dark);
-    box-shadow: 0 0 0 0.2rem var(--hospital-green);
+    
+    &:hover {
+        color: var(--hospital-green-dark);
+        background: var(--text-input-field);
+    }
+    
+    &:active {
+        border-color: var(--hospital-green-dark);
+        box-shadow: 0 0 0 0.2rem var(--hospital-green);
+    }
 }
 
 .btn--link-primary {
@@ -49,11 +49,11 @@
     border: none;
     background: none;
     cursor: pointer;
-}
-
-.btn--link-primary:hover {
-    color: var(--hospital-green-dark);
-    text-decoration: underline;
+    
+    &:hover {
+        color: var(--hospital-green-dark);
+        text-decoration: underline;
+    }
 }
 
 .btn--block {
@@ -67,14 +67,14 @@
     cursor: pointer;
     font-size: 2.5rem;
     font-weight: bold;
-}
-
-.btn-close::after {
-    content: "×";
-}
-
-.btn-close:hover, .btn-close:focus {
-    color: rgba(157, 5, 5, 0.8);
+    
+    &::after {
+        content: "×";
+    }
+    
+    &:hover, &:focus {
+        color: rgba(157, 5, 5, 0.8);
+    }
 }
 
 .btn-close--thin {

@@ -1,7 +1,7 @@
 @import url("./components/btn.css");
 @import url("./components/spacing.css");
 
-:root{
+:root {
     --white: #FFFFFF;
     --black: #000000;
     --dark: #232830;
@@ -36,10 +36,10 @@
 
 body {
     font-size: var(--font-sm);
-}
-
-body:has(dialog[open]) {
-    overflow: hidden;
+    
+    &:has(dialog[open]) {
+        overflow: hidden;
+    }
 }
 
 .container {
@@ -54,6 +54,10 @@ body:has(dialog[open]) {
     height: 100vh;
     text-align: center;
     font-size: inherit;
+
+    @media (max-height: 500px) {
+        height: inherit;
+    }
 }
 
 .container-flex-center__header {
@@ -78,6 +82,10 @@ body:has(dialog[open]) {
     display: block;
     margin: 0 auto 30px;
     width: 170px;
+
+    @media (max-width: 767.98px) and (orientation: landscape) {
+        display: none;
+    }
 }
 
 .main-logo--lg {
@@ -119,21 +127,21 @@ small {
 .link {
     text-decoration: none;
     color: var(--hospital-green);
-}
-
-.link:hover {
-    text-decoration: underline;
-    color: var(--hospital-green-dark);
+    
+    &:hover {
+        text-decoration: underline;
+        color: var(--hospital-green-dark);
+    }
 }
 
 .link-unstyled {
     text-decoration: none;
     color: var(--black);
-}
-
-.link-unstyled:active, .link-unstyled:hover {
-    text-decoration: underline;
-    color: var(--dark);
+    
+    &:active, &:hover {
+        text-decoration: underline;
+        color: var(--dark);
+    }
 }
 
 .circle-wrapper {
@@ -150,7 +158,7 @@ small {
 .scale-up-center { animation:scale-up-center 0.4s; }
 @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
 
-.slide-right{ animation:slide-right .3s linear both; }
+.slide-right { animation:slide-right .3s linear both; }
 @keyframes slide-right{ 0%{transform:translateX(-100px)} 100%{transform:translateX(0px)} }
 
 .slide-bottom { animation:slide-bottom .3s linear both }
@@ -175,18 +183,6 @@ small {
         bottom: 0;
         width: inherit;
         max-width: inherit;
-    }
-}
-
-@media (max-height: 500px) {
-    .container-flex-center {
-        height: inherit;
-    }
-}
-
-@media (max-width: 767.98px) and (orientation: landscape) {
-    .main-logo {
-        display: none;
     }
 }
 
