@@ -1,4 +1,4 @@
-import ShoppingCart from './../ShoppingCart/ShoppingCart.js';
+import ShoppingCart from '../ShoppingCart/ShoppingCart.js';
 const navBarCategoryLabelTemplate = (id) => `
     <label class="nav-bar__category-label">
         <input type="radio" class="nav-bar__category-option" name="category" id="cat-all-${id}" checked>

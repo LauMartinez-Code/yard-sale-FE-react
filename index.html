@@ -6,30 +6,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap">
-    <link rel="stylesheet" href="./base-styles.css">
     <link rel="stylesheet" href="./components/NavBar/NavBar.css">
     <link rel="stylesheet" href="./components/ProductCard/ProductCard.css">
     <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
-    <script type="module" src="./components/ProductCard/ProductCard.js"></script>
-    <script type="module" src="./components/NavBar/NavBar.js"></script>
+    <!-- <script type="module" src="./components/ProductCard/ProductCard.js"></script> -->
+    <script type="module" src="./src/components/NavBar/NavBar.js"></script>
     <title>Yard Sale</title>
 </head>
 <body>
-    <nav-bar></nav-bar>
-    
-    <div class="container">
-        <main class="products-grid"></main>
-    </div>
-
-    <script type="module">
-        import ProductCard from './components/ProductCard/ProductCard.js';
-        import PRODUCT_LIST from './assets/data/ProductList.js';
-
-        const main = document.querySelector('main.products-grid');
-        
-        for (const product of PRODUCT_LIST) {
-            main.appendChild(new ProductCard(product));
-        }
-    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
