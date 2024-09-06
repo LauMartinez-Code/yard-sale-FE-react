@@ -9,6 +9,10 @@ Para el diseño de las interfaces se tuvieron en cuenta los lineamientos plantea
 - [Figma - Mobile UI](https://www.figma.com/proto/bcEVujIzJj5PNIWwF9pP2w/Platzi_YardSale?node-id=0-684&amp%3Bscaling=scale-down&amp%3Bpage-id=0%3A1&amp%3Bstarting-point-node-id=0%3A719)
 - [Figma - Desktop UI](https://www.figma.com/proto/bcEVujIzJj5PNIWwF9pP2w/Platzi_YardSale?node-id=3-2112&amp%3Bscaling=scale-down&amp%3Bpage-id=0%3A998&amp%3Bstarting-point-node-id=5%3A2808)
 
+## Ejecutar localmente
+Es requerido tener instalado Node.js  
+- En la carpeta del proyecto abrir una terminal y ejecutar `npm install` y luego `npm run dev`.
+
 <!-- También se usa JavaScript en menor medida, principalmente para dar interacción entre las distintas interfaces y evitar la repetición de código mediante el uso de *Web Components*. Es por esto que hay funcionalidades como eliminar items desde el carrito de compras o actualizar los datos de la cuenta del usuario que están implementadas para poder probar la UI, pero otras acciones como agregar/eliminar items al carrito desde el listado de productos, no lo están.  -->
 
 <!-- El proyecto se puede visualizar y probar desde el siguiente link: [Yard Sale (laumartinez-code.github.io)](https://laumartinez-code.github.io/yard-sale-FE/) (corresponde al último commit de la rama `master`). -->
