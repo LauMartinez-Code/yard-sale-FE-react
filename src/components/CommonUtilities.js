@@ -17,16 +17,13 @@ export const toCurrencyFormat = value => {
 }
 
 
-/** Establece un ellipsis ("`...`") sobre el contenido de texto de un elemento dado,
+/** Concatena un ellipsis ("`...`") al final de `text`
  *  cuando la cantidad de caracteres es mayor a `45` */
-export const setTextEllipsis = (element, text) => {
-    if(text.length > 45) {
-        element.setAttribute('title', text);
-        element.textContent = text.substring(0,41) + '...';
-    }
-    else {
-        element.textContent = text;
-    }
+export const setTextEllipsis = (text) => {
+    if(text.length > 45)
+        return text.substring(0,41) + '...';
+
+    return text;
 };
 
 /** Agrega la clase `.submitted` al primer fomulario dentro de `<main>`
