@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useRef } from 'react';
 
 const NavBarMenu = ({ children, onClickSignOutBtn }) => {
@@ -14,9 +13,6 @@ const NavBarMenu = ({ children, onClickSignOutBtn }) => {
 
         window.matchMedia('(min-width: 992px)').addEventListener('change', (e) => onChangeNavBarMenu(e));
         
-        return () => {
-            window.removeEventListener('change', onChangeNavBarMenu);
-        };
     }, []);
 
     const openDialog = () => {

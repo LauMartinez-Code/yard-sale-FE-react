@@ -1,6 +1,6 @@
 import NavBarMenu from './NavBarMenu.jsx';
 import NavBarCategoryLabel from './NavBarCategoryLabel.jsx';
-// import ShoppingCart from '../ShoppingCart/ShoppingCart.js';
+import ShoppingCart from '../ShoppingCart/ShoppingCart.jsx';
 import './NavBar.css';
 
 const categories = [
@@ -53,11 +53,7 @@ const NavBar = () => {
                     </menu>
                 </div>
                 
-                <button type="button" className="nav-bar__cart-btn btn" title="Shopping cart">
-                    <img className="nav-bar__cart-icon" src="/src/assets/icons/icon_shopping_cart.svg" alt="Cart 🛒"/>
-                </button>
-
-                {/* <ShoppingCart/> */}
+                <ShoppingCart/>
             </div>
             
         </nav>
