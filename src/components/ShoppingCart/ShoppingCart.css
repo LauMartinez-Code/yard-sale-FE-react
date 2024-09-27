@@ -6,6 +6,7 @@
     margin-left: auto;
     padding: 10px 15px 15px;
     box-shadow: var(--grey-box-shadow-sm);
+    top: var(--navbar-height);
 
     @media ((height <= 450px) and (width < 778px)) {
         top: 0;
@@ -30,6 +31,18 @@
     @media (width >= 1400px) {
         width: 30vw;
     }
+}
+
+.shopping-cart__cart-btn {
+    padding: 10px 16px;
+
+    @media (width >= 992px) {
+        margin: 0 20px 0 5px;
+    }
+}
+
+.shopping-cart__cart-icon {
+    width: 36px;
 }
 
 .shopping-cart__container {

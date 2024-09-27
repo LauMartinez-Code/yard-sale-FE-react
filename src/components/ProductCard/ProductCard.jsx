@@ -6,7 +6,7 @@ const ProductCard = ({title, price, coverSrc, isInCart: intialIsInCart}) => {
     const [isInCart, setIsInCart] = useState(intialIsInCart);
     const productCardClassName = 'product-card' + (isInCart ? ' product-in-cart' : '');
     const cartButtonTitle = isInCart ? 'Remove from cart' : 'Add to cart';
-    const cartButtonIconSrc = '/src/assets/icons/' + (isInCart ? 'bt_added_to_cart.svg' : 'bt_add_to_cart.svg');
+    const cartButtonIconSrc = '/icons/' + (isInCart ? 'bt_added_to_cart.svg' : 'bt_add_to_cart.svg');
 
     return (
         <article className={productCardClassName}>

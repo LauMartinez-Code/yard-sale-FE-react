@@ -1,6 +1,4 @@
 @import url("../dropdown.css");
-@import url("../ShoppingCart/ShoppingCart.css");
-@import url("../ProductItem/ProductItem.css");
 
 .nav-bar {
     display: flex;
@@ -123,13 +121,5 @@
 
     .nav-bar__logo {
         width: 150px;
-    }
-
-    .nav-bar__cart-btn {
-        margin: 0 20px 0 5px;
-    }
-
-    .nav-bar__cart-icon {
-        width: 28px;
     }
 }

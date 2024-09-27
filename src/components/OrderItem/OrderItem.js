@@ -35,7 +35,7 @@ render(isForOrderDetail) {
                 <div>
                     <span class="order-item__amount">${toCurrencyFormat(this.amount)}</span>
                     <button type="button" class="order-item__btn-details btn p-0" title="See details">
-                        <img src="./assets/icons/arrow.svg" alt=">" class="order-item__btn-details-icon">
+                        <img src="/icons/arrow.svg" alt=">" class="order-item__btn-details-icon">
                     </button>
                 </div>
             </article>
