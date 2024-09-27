@@ -22,7 +22,7 @@ const NavBarMenu = ({ children, onClickSignOutBtn }) => {
     return (
     <>
         <button type="button" className="nav-bar__menu-btn btn" onClick={openDialog}>
-            <img src="/src/assets/icons/icon_menu.svg" alt="menu"/>
+            <img src="/icons/icon_menu.svg" alt="menu"/>
         </button>
 
         <dialog className="nav-bar__menu slide-right" ref={dialogRef}>

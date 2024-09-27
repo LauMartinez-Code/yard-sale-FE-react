@@ -21,7 +21,7 @@ export default class MainTitle extends HTMLElement {
         this.innerHTML = `
             <h1 class="title-h1 mb-4">
                 <button type="button" class="btn p-0 me-1 d-none" title="Back">
-                    <img src="./assets/icons/arrow.svg" alt=">" class="title-h1__back-btn">
+                    <img src="/icons/arrow.svg" alt=">" class="title-h1__back-btn">
                 </button>
                 <span>${this.title}</span>
             </h1>

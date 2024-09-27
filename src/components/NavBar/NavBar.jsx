@@ -37,7 +37,7 @@ const NavBar = () => {
                 <div className="dropdown d-none d-initial--lg">
                     <span className="dropdown__title nav-bar__email">example@email.com</span>
                     <button type="button" className="dropdown__btn btn">
-                        <img className="dropdown__btn-icon dropdown__btn-icon--sm" src="/src/assets/icons/arrow.svg" alt=">"/>
+                        <img className="dropdown__btn-icon dropdown__btn-icon--sm" src="/icons/arrow.svg" alt=">"/>
                     </button>
                     <menu className="dropdown__content dropdown__content--slide-bottom">
                         <a href="./my-orders.html" className="dropdown__option link-unstyled">My orders</a>

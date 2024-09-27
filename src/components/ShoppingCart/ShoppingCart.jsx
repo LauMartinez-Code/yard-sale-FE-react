@@ -22,7 +22,7 @@ const ShoppingCart = () => {
     const isCartEmpty = productList.length == 0;
     const cartBodyClassName = 'shopping-cart__body' + (isCartEmpty ? ' shopping-cart__body--cart-empty' : '');
     const cartFooterClassName = 'shopping-cart__footer' + (isCartEmpty ? ' d-none' : '');
-    const cartIconBtnSource = `/src/assets/icons/shopping_cart_${isCartEmpty ? 'outline' : 'filled'}.svg`;
+    const cartIconBtnSource = `/icons/shopping_cart_${isCartEmpty ? 'outline' : 'filled'}.svg`;
     
     const onClickCartBtn = () => {
         if (dialogRef.current.hasAttribute('open')) {
@@ -62,7 +62,7 @@ const ShoppingCart = () => {
                     {
                         isCartEmpty && (
                         <>
-                            <img className="mb-3" src="/src/assets/icons/shopping_bag_icon.svg" alt="🛒" width="100" />
+                            <img className="mb-3" src="/icons/shopping_bag_icon.svg" alt="🛒" width="100" />
                             <h1 className="title-h2">Shopping cart is empty!</h1>
                             <p>The products you add to the cart will be seen here</p>
                         </>
