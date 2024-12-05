@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { toCurrencyFormat, setTextEllipsis } from '../CommonUtilities.js';
+import { toCurrencyFormat, setTextEllipsis } from '@components/CommonUtilities.js';
 import './ProductCard.css';
 
 const ProductCard = ({title, price, coverSrc, isInCart: intialIsInCart}) => {

@@ -1,4 +1,4 @@
-import { toCurrencyFormat, setTextEllipsis } from '../CommonUtilities.js';
+import { toCurrencyFormat, setTextEllipsis } from '@components/CommonUtilities.js';
 import './ProductItem.css';
 
 /**

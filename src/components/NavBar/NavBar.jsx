@@ -1,6 +1,6 @@
-import NavBarMenu from './NavBarMenu.jsx';
-import NavBarCategoryLabel from './NavBarCategoryLabel.jsx';
-import ShoppingCart from '../ShoppingCart/ShoppingCart.jsx';
+import NavBarMenu from '@components/NavBar/NavBarMenu.jsx';
+import NavBarCategoryLabel from '@components/NavBar/NavBarCategoryLabel';
+import ShoppingCart from '@components/ShoppingCart/ShoppingCart.jsx';
 import './NavBar.css';
 
 const categories = [
@@ -34,6 +34,7 @@ const NavBar = () => {
             </div>
         
             <div className="nav-bar__section-email-cart">
+                {/* <Dropdown title="example@email.com"></Dropdown> */}
                 <div className="dropdown d-none d-initial--lg">
                     <span className="dropdown__title nav-bar__email">example@email.com</span>
                     <button type="button" className="dropdown__btn btn">
@@ -61,3 +62,34 @@ const NavBar = () => {
 }
 
 export default NavBar;
+
+// import React from 'react'
+
+const Dropdown = (title, options, footerOption) => {
+    return (
+        <div className="dropdown d-none d-initial--lg">
+            <span className="dropdown__title nav-bar__email">{title}</span>
+            <button type="button" className="dropdown__btn btn">
+                <img className="dropdown__btn-icon dropdown__btn-icon--sm" src="/icons/arrow.svg" alt=">"/>
+            </button>
+            <menu className="dropdown__content dropdown__content--slide-bottom">
+                <a href="./my-orders.html" className="dropdown__option link-unstyled">My orders</a>
+                <a href="./my-account.html" className="dropdown__option link-unstyled">My account</a>
+                
+                {footerOption && 
+                    <>
+                        <hr className="my-3"/>
+                        
+                        <button type="button" id="navBarSignOutBtnDesktop"
+                            className="dropdown__option btn btn--link-primary"
+                            onClick={onClickSignOutBtn}>
+                            Sign out
+                        </button>
+                    </>
+                }
+            </menu>
+        </div>
+    )
+}
+
+// export default NavBar

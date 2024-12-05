@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
-import ProductItem from '../ProductItem/ProductItem.jsx';
-import { toCurrencyFormat } from '../CommonUtilities.js';
-import PRODUCT_LIST from '../../assets/data/ProductList.js';
+import ProductItem from '@components/ProductItem/ProductItem.jsx';
+import { toCurrencyFormat } from '@components/CommonUtilities.js';
+import PRODUCT_LIST from '@assets/data/ProductList.js';
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {
