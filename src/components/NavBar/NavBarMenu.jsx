@@ -40,7 +40,7 @@ const NavBarMenu = ({ children, onClickSignOutBtn }) => {
         
                 <section className="nav-bar__menu-section-email">
                     <p className="nav-bar__menu-email">example@email.com</p>
-                    <button type="button" id="navBarSignOutBtnMobile"
+                    <button type="button"
                         className="btn btn--link-primary nav-bar__menu-sign-out-btn"
                         onClick={onClickSignOutBtn}>
                             Sign out
