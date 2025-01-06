@@ -1,20 +1,15 @@
-import ProductCard from '@components/ProductCard/ProductCard.jsx';
+import { Routes, Route } from 'react-router';
 import NavBar from '@components/NavBar/NavBar.jsx';
-import PRODUCT_LIST from '@assets/data/ProductList.js';
+import Home from '@components/Home/Home.jsx';
 
 function App() {
 
     return (
         <>
             <NavBar/>
-    
-            <div className="container">
-                <main className="products-grid">
-                    {PRODUCT_LIST.map(product => 
-                        <ProductCard {...product} key={product.id}/>
-                    )}
-                </main>
-            </div>
+            <Routes>
+                <Route index element={<Home />} />
+            </Routes>
         </>
     )
 }
