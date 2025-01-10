@@ -8,7 +8,7 @@ import CreateAccount from '@/pages/Auth/CreateAccount/CreateAccount.jsx';
 import PasswordRecovery from '@/pages/Auth/PasswordRecovery/PasswordRecovery.jsx';
 import PassRecoveryEmailSent from '@/pages/Auth/PasswordRecovery/PassRecoveryEmailSent/PassRecoveryEmailSent.jsx';
 import CreatePassword from '@/pages/Auth/CreatePassword/CreatePassword.jsx';
-import PageNotFound from '@/pages/PageNotFound/PageNotFound.jsx';
+import PageNotFound from '@/pages/error/PageNotFound/PageNotFound.jsx';
 
 function App() {
 
