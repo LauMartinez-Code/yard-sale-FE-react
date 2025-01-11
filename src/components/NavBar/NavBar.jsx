@@ -1,15 +1,23 @@
-import NavBarMenu from './NavBarMenu.jsx';
-import NavBarCategoryLabel from './NavBarCategoryLabel.jsx';
-import ShoppingCart from '../ShoppingCart/ShoppingCart.jsx';
+import { Link, useNavigate } from 'react-router';
+import NavBarMenu from '@components/NavBar/NavBarMenu.jsx';
+import NavBarCategoryLabel from '@components/NavBar/NavBarCategoryLabel.jsx';
+import Dropdown from '@components/Dropdown/Dropdown.jsx';
+import ShoppingCart from '@components/ShoppingCart/ShoppingCart.jsx';
 import './NavBar.css';
 
 const categories = [
     'All', 'Clothes', 'Electronics', 'Furniture', 'Toys', 'Others'
 ];
 
-const NavBar = () => {
+const dropdownItems = [
+    { link: '/orders', text: 'My orders' },
+    { link: '/account', text: 'My account' }
+];
 
-    const onClickSignOutBtn = () => location.href = './login.html';
+const NavBar = () => {
+    const navigate = useNavigate();
+
+    const onClickSignOutBtn = () => navigate('/login');
     
     const getCategoryLabels = (id) => {
         return categories.map(cat =>
@@ -24,9 +32,9 @@ const NavBar = () => {
             </NavBarMenu>
             
             <div className="nav-bar__section-logo-categories">
-                <a className="nav-bar__link" href="/">
+                <Link className="nav-bar__link" to="/">
                     <img className="nav-bar__logo" src="/logos/logo_yard_sale.svg" alt="Yard Sale"/>
-                </a>
+                </Link>
                 
                 <form className="nav-bar__categories">
                     {getCategoryLabels(2)}
@@ -34,24 +42,9 @@ const NavBar = () => {
             </div>
         
             <div className="nav-bar__section-email-cart">
-                <div className="dropdown d-none d-initial--lg">
-                    <span className="dropdown__title nav-bar__email">example@email.com</span>
-                    <button type="button" className="dropdown__btn btn">
-                        <img className="dropdown__btn-icon dropdown__btn-icon--sm" src="/icons/arrow.svg" alt=">"/>
-                    </button>
-                    <menu className="dropdown__content dropdown__content--slide-bottom">
-                        <a href="./my-orders.html" className="dropdown__option link-unstyled">My orders</a>
-                        <a href="./my-account.html" className="dropdown__option link-unstyled">My account</a>
-                        
-                        <hr className="my-3"/>
-        
-                        <button type="button" id="navBarSignOutBtnDesktop" 
-                            className="dropdown__option btn btn--link-primary"
-                            onClick={onClickSignOutBtn}>
-                            Sign out
-                        </button>
-                    </menu>
-                </div>
+                <Dropdown title="example@email.com" 
+                    optionsItems={dropdownItems} 
+                    footerOption={{text: 'Sign out', action: onClickSignOutBtn}} />
                 
                 <ShoppingCart/>
             </div>

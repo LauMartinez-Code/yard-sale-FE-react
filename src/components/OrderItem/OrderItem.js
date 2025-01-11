@@ -1,6 +1,6 @@
-import ProductItem from '../ProductItem/ProductItem.js';
-import PRODUCT_LIST from '../../assets/data/ProductList.js';
-import { toCurrencyFormat } from '../CommonUtilities.js';
+import ProductItem from '@components/ProductItem/ProductItem.jsx';
+import PRODUCT_LIST from '@utils/data/ProductList.js';
+import { toCurrencyFormat } from '@components/CommonUtilities.js';
 const OrderDetailElement = document.getElementById('OrderDetail');
 export default class OrderItem extends HTMLElement {
     orderID;

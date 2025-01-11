@@ -1,21 +1,34 @@
-import ProductCard from './components/ProductCard/ProductCard.jsx';
-import NavBar from './components/NavBar/NavBar.jsx';
-import PRODUCT_LIST from './assets/data/ProductList.js';
+import { Routes, Route } from 'react-router';
+import AuthLayout from '@/layouts/AuthLayout.jsx';
+import Home from '@/pages/Home/Home.jsx';
+import Account from '@/pages/Account/Account.jsx';
+import Orders from '@/pages/Orders/Orders.jsx';
+import Login from '@/pages/Auth/Login/Login.jsx';
+import CreateAccount from '@/pages/Auth/CreateAccount/CreateAccount.jsx';
+import PasswordRecovery from '@/pages/Auth/PasswordRecovery/PasswordRecovery.jsx';
+import PassRecoveryEmailSent from '@/pages/Auth/PasswordRecovery/PassRecoveryEmailSent/PassRecoveryEmailSent.jsx';
+import CreatePassword from '@/pages/Auth/CreatePassword/CreatePassword.jsx';
+import PageNotFound from '@/pages/error/PageNotFound/PageNotFound.jsx';
 
 function App() {
 
     return (
-        <>
-            <NavBar/>
-    
-            <div className="container">
-                <main className="products-grid">
-                    {PRODUCT_LIST.map(product => 
-                        <ProductCard {...product} key={product.id}/>
-                    )}
-                </main>
-            </div>
-        </>
+        <Routes>
+            <Route index element={<Home />} />
+            <Route path='account' element={<Account />} />
+            <Route path='orders' element={<Orders />} >
+                <Route path=':orderId' element={<h1>Order Details</h1>} />
+            </Route>
+            <Route element={<AuthLayout />}>
+                <Route path='login' element={<Login />} />
+                <Route path='create-account' element={<CreateAccount />} />
+                <Route path='password-recovery' element={<PasswordRecovery />} >
+                    <Route path='email-sent' element={<PassRecoveryEmailSent />} />
+                </Route>
+                <Route path='create-password' element={<CreatePassword />} />
+            </Route>
+            <Route path='*' element={<PageNotFound />} />
+        </Routes>
     )
 }
 
