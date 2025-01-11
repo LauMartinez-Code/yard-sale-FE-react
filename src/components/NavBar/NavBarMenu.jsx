@@ -7,7 +7,7 @@ const NavBarMenu = ({ children, onClickSignOutBtn }) => {
 
     useEffect(() => {
         const onChangeNavBarMenu = (event) => {
-            if (event.matches && dialogRef.current.hasAttribute('open')) {
+            if (event.matches && dialogRef.current?.hasAttribute('open')) {
                 dialogRef.current.close();
             }
         }
