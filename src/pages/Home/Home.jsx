@@ -1,6 +1,6 @@
 import NavBar from '@components/NavBar/NavBar.jsx';
 import ProductCard from '@components/ProductCard/ProductCard.jsx';
-import PRODUCT_LIST from '@assets/data/ProductList.js';
+import PRODUCT_LIST from '@utils/data/ProductList.js';
 
 const Home = () => {
     return (
