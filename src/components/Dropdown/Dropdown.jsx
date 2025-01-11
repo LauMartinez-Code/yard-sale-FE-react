@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './Dropdown.css';
 
 /** 
@@ -21,10 +22,10 @@ const Dropdown = ({ title, optionsItems = [], footerOption = null }) => {
                 {optionsItems.length > 0 ?
                     <>
                         {optionsItems.map(item =>
-                                <a key={item.link} href={item.link}
-                                    className="dropdown__option link-unstyled">
-                                        {item.text}
-                                </a>
+                            <Link key={item.link} to={item.link}
+                                className="dropdown__option link-unstyled">
+                                    {item.text}
+                            </Link>
                         )}
                         
                         {footerOption &&

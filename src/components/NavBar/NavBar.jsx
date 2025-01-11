@@ -1,3 +1,4 @@
+import { Link, useNavigate } from 'react-router';
 import NavBarMenu from '@components/NavBar/NavBarMenu.jsx';
 import NavBarCategoryLabel from '@components/NavBar/NavBarCategoryLabel.jsx';
 import Dropdown from '@components/Dropdown/Dropdown.jsx';
@@ -9,13 +10,14 @@ const categories = [
 ];
 
 const dropdownItems = [
-    { link: './my-orders.html', text: 'My orders' },
-    { link: './my-account.html', text: 'My account' }
+    { link: './orders', text: 'My orders' },
+    { link: './account', text: 'My account' }
 ];
 
 const NavBar = () => {
+    const navigate = useNavigate();
 
-    const onClickSignOutBtn = () => location.href = './login.html';
+    const onClickSignOutBtn = () => navigate('/login');
     
     const getCategoryLabels = (id) => {
         return categories.map(cat =>
@@ -30,9 +32,9 @@ const NavBar = () => {
             </NavBarMenu>
             
             <div className="nav-bar__section-logo-categories">
-                <a className="nav-bar__link" href="/">
+                <Link className="nav-bar__link" to="/">
                     <img className="nav-bar__logo" src="/logos/logo_yard_sale.svg" alt="Yard Sale"/>
-                </a>
+                </Link>
                 
                 <form className="nav-bar__categories">
                     {getCategoryLabels(2)}

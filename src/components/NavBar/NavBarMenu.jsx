@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router';
 
 const NavBarMenu = ({ children, onClickSignOutBtn }) => {
 
@@ -35,8 +36,8 @@ const NavBarMenu = ({ children, onClickSignOutBtn }) => {
 
                 <hr className="my-3"/>
         
-                <a href="./my-orders.html" className="link-unstyled mb-2">My orders</a>
-                <a href="./my-account.html" className="link-unstyled">My account</a>
+                <Link to="/orders" className="link-unstyled mb-2">My orders</Link>
+                <Link to="/account" className="link-unstyled">My account</Link>
         
                 <section className="nav-bar__menu-section-email">
                     <p className="nav-bar__menu-email">example@email.com</p>
