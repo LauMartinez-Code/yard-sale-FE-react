@@ -10,8 +10,8 @@ const categories = [
 ];
 
 const dropdownItems = [
-    { link: './orders', text: 'My orders' },
-    { link: './account', text: 'My account' }
+    { link: '/orders', text: 'My orders' },
+    { link: '/account', text: 'My account' }
 ];
 
 const NavBar = () => {

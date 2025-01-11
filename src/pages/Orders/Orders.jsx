@@ -1,8 +1,14 @@
 // import React from 'react';
+import NavBar from "@/components/NavBar/NavBar";
 
 const Orders = () => {
     return (
-        <h1>Orders</h1>
+        <>
+            <NavBar />
+            <main className="container container-md mx-auto--md">
+                <h1>My Orders</h1>
+            </main>
+        </>
     )
 }
 
