@@ -1,20 +1,11 @@
-// import React from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import '@components/form-vertical.css';
-// import { onTrySubmitMainForm } from '@components/CommonUtilities.js';
-//import './Login.css';
 
 const Login = () => {
-    // const onFormSubmit = event => {
-    //     event.preventDefault();
-    //     location.href = './index.html';
-    // }
-
-    // const form = document.querySelector('form').addEventListener('submit', onFormSubmit);
-    // onTrySubmitMainForm();
+    const navigate = useNavigate();
 
     return (
-        <form className="form-vertical">
+        <form className="form-vertical" onSubmit={() => navigate('/')} >
             <label className="form-vertical__label">
                 Email address
                 <input type="email" className="form-vertical__input" placeholder="example@example.com" maxLength="80" required />
