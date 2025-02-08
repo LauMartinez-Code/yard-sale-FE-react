@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router';
-import '@components/form-vertical.css';
 
 const Login = () => {
     const navigate = useNavigate();
