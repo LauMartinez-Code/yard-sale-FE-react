@@ -22,7 +22,8 @@ const router = createBrowserRouter(
             <Route element={<AuthLayout />}>
                 <Route path='login' element={<Login />} />
                 <Route path='create-account' element={<CreateAccount />} />
-                <Route path='password-recovery' element={<PasswordRecovery />} >
+                <Route path='password-recovery' >
+                    <Route index element={<PasswordRecovery />} />
                     <Route path='email-sent' element={<PassRecoveryEmailSent />} />
                 </Route>
                 <Route path='create-password' element={<CreatePassword />} />
