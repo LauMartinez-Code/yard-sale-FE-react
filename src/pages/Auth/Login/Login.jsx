@@ -3,8 +3,13 @@ import { Link, useNavigate } from 'react-router';
 const Login = () => {
     const navigate = useNavigate();
 
+    const handleFormSubmit = event => {
+        event.preventDefault();
+        navigate('/');
+    }
+
     return (
-        <form className="form-vertical" onSubmit={() => navigate('/')} >
+        <form className="form-vertical" onSubmit={handleFormSubmit} >
             <label className="form-vertical__label">
                 Email address
                 <input type="email" className="form-vertical__input" placeholder="example@example.com" maxLength="80" required />
