@@ -1,6 +1,7 @@
 // import React from 'react'
 import { Link, Outlet } from 'react-router';
 import NavBar from '@components/NavBar/NavBar.jsx';
+import '@components/form-vertical.css';
 
 const AuthLayout = () => {
     return (

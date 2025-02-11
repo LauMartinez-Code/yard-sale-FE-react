@@ -47,7 +47,7 @@
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
 
-    &:user-invalid, form.submitted &:invalid {
+    &:user-invalid {
         border-color: var(--red-error);
     
         &:focus {
@@ -73,7 +73,7 @@
     font-size: var(--font-smaller);
     color: var(--very-light-pink);
 
-    :is(.form-vertical__input:user-invalid, form.submitted .form-vertical__input:invalid) + & {
+    .form-vertical__input:user-invalid + & {
         color: var(--red-error);
     }
 }
