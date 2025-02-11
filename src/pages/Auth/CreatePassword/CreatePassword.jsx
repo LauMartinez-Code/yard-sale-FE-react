@@ -14,13 +14,13 @@ const CreatePassword = () => {
         <h4 className="subtitle">Enter a new password for your account</h4>
 
         <form className="form-vertical" onSubmit={handleFormSubmit}>
-            <Label label="Password"
+            <Label text="Password"
                 helpText="It must contain 8 or more characters, in which there is at least one number and one upper and lower case letter">
                 <input type="password" className="form-vertical__input" placeholder="Enter password"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxLength="80" required />
             </Label>
 
-            <Label label="Re-enter password" errorMessage="Enter a valid password">
+            <Label text="Re-enter password" errorMessage="Enter a valid password">
                 <input type="password" className="form-vertical__input" placeholder="Re-enter password"
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxLength="80" required />
             </Label>
