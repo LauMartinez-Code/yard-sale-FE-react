@@ -15,13 +15,3 @@ export const toCurrencyFormat = value => {
         });
     }
 }
-
-
-/** Concatena un ellipsis ("`...`") al final de `text`
- *  cuando la cantidad de caracteres es mayor a `45` */
-export const setTextEllipsis = (text) => {
-    if(text.length > 45)
-        return text.substring(0,41) + '...';
-
-    return text;
-};

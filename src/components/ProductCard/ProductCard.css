@@ -34,6 +34,10 @@
     font-weight: var(--font-weight-light);
     color: var(--dark);
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 .product-card__price {
