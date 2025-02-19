@@ -1,11 +1,12 @@
 import orderList from '@utils/data/OrderList.js';
 import OrderItem from '@components/OrderItem/OrderItem.jsx';
+import MainTitle from '@components/MainTitle/MainTitle';
 
 const Orders = () => {
 
     return (
         <>
-            <h1 className="title-h1 mb-4">My orders</h1>
+            <MainTitle className="mb-4">My orders</MainTitle>
             <section>
                 {orderList.map(order => (
                     <OrderItem key={order.orderID} {...order} showDetailsBtn />

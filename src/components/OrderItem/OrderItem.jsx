@@ -4,7 +4,7 @@ import '@components/OrderItem/OrderItem.css';
 
 const OrderItem = ({orderID, date, amount, itemsID, showDetailsBtn = false}) => {
     
-    const orderItemClassName = `order-item ${showDetailsBtn ? '' : ' order-item--grey'}`;
+    const orderItemClassName = `order-item${showDetailsBtn ? '' : ' order-item--grey'}`;
 
     return (
         <article className={orderItemClassName}>

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 import OrderItem from '@/components/OrderItem/OrderItem.jsx';
 import ProductItem from '@components/ProductItem/ProductItem.jsx';
 import orderList from '@utils/data/OrderList.js';
 import PRODUCT_LIST from '@utils/data/ProductList.js';
+import MainTitle from '@components/MainTitle/MainTitle.jsx';
 
 const OrderDetails = () => {
     const { orderId } = useParams();
@@ -37,12 +38,9 @@ const OrderDetails = () => {
     
     return (
         <>
-            <h1 className="title-h1 mb-4">
-                <Link to="/orders" className="btn p-0 me-2" title="Back" >
-                    <img src="/icons/arrow.svg" alt=">" className="title-h1__back-btn" />
-                </Link>
-                <span>Order #{orderId}</span>
-            </h1>
+            <MainTitle className="mb-4" linkBackTo="/orders">
+                Order #{orderId}
+            </MainTitle>
             {order &&
                 <section>
                     <OrderItem {...order} />

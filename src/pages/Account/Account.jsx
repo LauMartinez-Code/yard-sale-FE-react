@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
 import Label from "@components/FormVertical/Label";
 import NavBar from "@components/NavBar/NavBar.jsx";
+import MainTitle from "@components/MainTitle/MainTitle";
 import '@components/FormVertical/FormVertical.css';
 
 const Account = () => {
@@ -38,7 +39,7 @@ const Account = () => {
 
             <main className="container-flex-center__body container-sm--md">
                 <form className="form-vertical" readOnly={isReadOnly} onSubmit={saveChanges}>
-                    <h1 className="title-h1 mb-2">My account</h1>
+                    <MainTitle className="mb-2">My account</MainTitle>
                     <Label text="Name" errorMessage="Enter a valid name">
                         <textarea type="text" name="name" className="form-vertical__input"
                             placeholder="Enter name" maxLength="80" rows="1" required

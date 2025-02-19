@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router";
+import MainTitle from "@components/MainTitle/MainTitle";
 
 const PasswordRecovery = () => {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ const PasswordRecovery = () => {
 
     return (
         <>
-            <h1 className="title-h1">Password recovery</h1>
+            <MainTitle>Password recovery</MainTitle>
             <h4 className="subtitle">Inform the email address used<br/>to create your account</h4>
 
             <form className="form-vertical" onSubmit={handleFormSubmit}>
