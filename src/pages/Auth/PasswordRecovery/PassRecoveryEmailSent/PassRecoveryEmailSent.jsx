@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Link } from "react-router";
 import Modal from "@components/Modal/Modal";
+import MainTitle from '@components/MainTitle/MainTitle';
 
 const PassRecoveryEmailSent = () => {
     const modalRef = useRef(null);
@@ -22,7 +23,7 @@ const PassRecoveryEmailSent = () => {
 
     return (
         <>
-            <h1 className="title-h1">Email has been sent!</h1>
+            <MainTitle>Email has been sent!</MainTitle>
             <h4 className="subtitle">Please check your inbox for instructions<br/>on how to reset the password</h4>
         
             <figure className="circle-wrapper mb-5">

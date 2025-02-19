@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router';
 import Label from "@components/FormVertical/Label";
+import MainTitle from '@components/MainTitle/MainTitle';
 
 const CreateAccount = () => {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const CreateAccount = () => {
     
     return (
         <>
-            <h1 className="title-h1">Sign up</h1>
+            <MainTitle>Sign up</MainTitle>
             <h4 className="subtitle">Fill the information to create your account</h4>
 
             <form className="form-vertical" onSubmit={createAccount}>

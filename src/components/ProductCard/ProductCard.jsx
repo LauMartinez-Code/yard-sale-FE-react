@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { toCurrencyFormat, setTextEllipsis } from '@components/CommonUtilities.js';
+import { toCurrencyFormat } from '@components/CommonUtilities.js';
 import './ProductCard.css';
 
 const ProductCard = ({title, price, coverSrc, isInCart: intialIsInCart}) => {
@@ -15,7 +15,7 @@ const ProductCard = ({title, price, coverSrc, isInCart: intialIsInCart}) => {
             </figure>
             <div className="product-card__info">
                 <div>
-                    <p className="product-card__title" title={title}>{setTextEllipsis(title)}</p>
+                    <p className="product-card__title" title={title}>{title}</p>
                     <p className="product-card__price">{toCurrencyFormat(price)}</p>
                 </div>
         

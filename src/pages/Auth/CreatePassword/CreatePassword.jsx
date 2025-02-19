@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import Label from "@components/FormVertical/Label";
+import MainTitle from "@components/MainTitle/MainTitle";
 
 const CreatePassword = () => {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ const CreatePassword = () => {
     }
 
     return (<>
-        <h1 className="title-h1">Create a new password</h1>
+        <MainTitle>Create a new password</MainTitle>
         <h4 className="subtitle">Enter a new password for your account</h4>
 
         <form className="form-vertical" onSubmit={handleFormSubmit}>

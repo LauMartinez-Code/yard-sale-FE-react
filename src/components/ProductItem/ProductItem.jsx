@@ -1,4 +1,4 @@
-import { toCurrencyFormat, setTextEllipsis } from '@components/CommonUtilities.js';
+import { toCurrencyFormat } from '@components/CommonUtilities.js';
 import './ProductItem.css';
 
 /**
@@ -8,7 +8,9 @@ const ProductItem = ({id, title, price, coverSrc, isRemovable = false, onRemoveP
     return (
         <article className="product-item">
             <img className="product-item__image" src={coverSrc} loading="lazy" />
-            <p className="product-item__title">{setTextEllipsis(title)}</p>
+            <p className="product-item__title" title={title.length > 35 ? title : undefined}>
+                {title}
+            </p>
 
             <div className="product-item__price">
                 <span>{toCurrencyFormat(price)}</span>
