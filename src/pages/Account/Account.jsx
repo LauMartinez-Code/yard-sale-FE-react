@@ -1,14 +1,18 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router";
 import Label from "@components/FormVertical/Label";
 import NavBar from "@components/NavBar/NavBar.jsx";
 import '@components/FormVertical/FormVertical.css';
 
 const Account = () => {
-    const initialUserData = useRef(JSON.parse(localStorage.getItem('yardSaleUser')) ?? { name:"John Doe", email: 'john.doe@email.com'});
-    const [userData, setUserData] = useState({...initialUserData.current});
+    const initialUserData = useRef(null);
+    const [userData, setUserData] = useState({ name: '', email: ''});
     const [isReadOnly, setReadOnly] = useState(true);
 
+    useEffect(() => {
+        initialUserData.current = JSON.parse(localStorage.getItem('yardSaleUser')) ?? { name: 'John Doe', email: 'john.doe@email.com'};
+        setUserData({...initialUserData.current});
+    }, []);
     
     const handleInputsChange = e => {
         setUserData({...userData, [e.target.name]: e.target.value});
